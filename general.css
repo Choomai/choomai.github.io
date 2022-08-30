@@ -1,0 +1,36 @@
+@font-face 
+{ 
+    font-family: "Choco cooky";  
+    src: url("/fonts/Chococooky.woff")format("woff"); 
+}
+::-webkit-scrollbar {
+    width: 13px;
+}
+::-webkit-scrollbar-track {
+    background: #5f5353;
+}
+::-webkit-scrollbar-thumb {
+    background: #7c7c7c;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #c5c5c5;
+}
+body{
+    background-color: black;
+}
+h1 {
+    font-family: "Choco cooky";
+}
+h2, a, p, div, th, tr {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.invert {filter: invert(100%);}
+.center {text-align: center;}
+.profile {
+    margin: -5px 5px;
+    width: 30px;
+    height: 30px;
+}
+.email {
+    font-size: 90%;
+}
