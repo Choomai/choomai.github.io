@@ -1,13 +1,21 @@
-fetch("https://choomai.ddns.net/dl/dirinfo.json")
+let dir = null;
+fetch("https://choomai.github.io/dl/dirinfo.json")
 .then(response => {
-   return response.json();
+    return response.json();
 })
 .then(data => dir = (data));
 let url_prefix = "/dl/";
 let i = 0;
 let user_type = "";
 function rmvPls_wait() {
-   document.getElementById("wait_notify").remove();
+    if (dir) {
+        document.getElementById("wait_notify").remove();
+    } else {
+        document.getElementById("wait_notify").innerHTML = "<b style=\"color:#FF3333\">An error occurred while trying to fetch dirinfo.json<br>Redirecting back to the main page...</b>";
+        setTimeout(() => {
+            window.location.href = "https://choomai.github.io"
+        }, 2000);
+    }
 };
 function chkSize(inp) {
    if (inp>1024) {return true} else {return false};
