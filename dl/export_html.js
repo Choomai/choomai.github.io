@@ -6,7 +6,7 @@ function createNewRow (inp) {
 };
 setTimeout(() => {
     document.getElementById("wait_notify").innerHTML = "<b style=\"color:#FF3333\">Timed out. Can't fetch dirinfo.json.</b>"
-}, 10000);
+}, 8000);
 setTimeout(() => {
     let dir_prefix = dir;
     function addItem(val) {
