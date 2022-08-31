@@ -1,0 +1,49 @@
+h1 {
+    font-size: 170%;
+    text-align: center;
+}
+p {
+    font-size: 120%;
+    color:aqua;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+.hname {
+    text-align: left;
+    padding-right: 10px;
+}
+.hmtime {
+    padding-left:10px;
+    padding-right:10px;
+}
+.htype {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.hsize {
+    padding-left: 40px;
+}
+.mtime, .type {
+    text-align: center;
+}
+.size {
+    text-align: right;
+}
+.dir {
+    text-align: left;
+    padding-right: 20px;
+    text-decoration-color: yellow;
+    color: yellow;
+}
+.iso, .txt, .img {
+    text-decoration-color:lime;
+    color:lime;
+    padding-right: 50px;
+}
+.zip, .ozip, .rar {
+    text-decoration-color:gold;
+    color:gold;
+    padding-right: 50px;
+}
