@@ -18,4 +18,4 @@ setTimeout(() => {
         createNewRow(i);
         addItem(i);
     }
-}, 1200);
+}, 1800);
