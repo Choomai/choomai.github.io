@@ -27,10 +27,10 @@ function closetab() {
 };
 function redirect() {
     if(document.getElementById("continue").checked) {
-        // alert("This video is marked as dangerous (or hidden by some weird mf [not me ofc] 😏), and I don't want to go to jail so... 😅")
-        vidbase();
-        vid_reqfs("userdebug.mp4");
-        vid.style.objectFit = "cover";
+        alert("I've disabled this option because someone won't let me enable it...");
+        // vidbase();
+        // vid_reqfs("userdebug.mp4");
+        // vid.style.objectFit = "cover";
     }
     else if(document.getElementById("vidoverlay").checked) {
         // Try your luck here 😂
@@ -78,34 +78,35 @@ function redirect() {
     }
 };
 function redirectV2() {
+    totalClick = 14;
     // Is this an easter egg ? 😂
     totalClick++;
     if (totalClick <= 3) {alert("This function has been disabled by the owner of this webiste.")}
     else if (totalClick > 3 && totalClick <= 5) {alert("Thi? f?nct?on has been d?sabled by the own?r o? this webi?te.")}
-    else if (totalClick > 5 && totalClick <= 10) {alert("T?i? f?nct\\on ha? be?? d$sabled ?y t?? own?r o? t?!? w?bi?te.")}
-    else if (totalClick > 10 && totalClick <= 12) {alert("T¾i¾ f@n¾t¾o& ha½ ?e?? d$?a?¾?? ?y t?? o!n¼r o? t\\½? w?b?½te.")}
+    else if (totalClick > 5 && totalClick <= 10) {alert("T?i? f?nct\\on ha? be?? d$s\\bl/d ?y t?? own?r o? t?!? w?bi?te.")}
+    else if (totalClick > 10 && totalClick <= 12) {alert("T¾i¾ f@n¾t$o& ha½ ?e?? d$?a?¾?? ?y t$? o!n¼r o? t\\½? w?b?½te.")}
     else if (totalClick == 12) {alert("Press OK to ignore the waring.");redirect()}
     else if (totalClick > 13) {redirect()};
 };
 // For countdown
-let endDate = new Date("Sep 27, 2022 20:00:00").getTime();
-const timerDay = document.getElementById("timer-days");
-const timerHour = document.getElementById("timer-hours");
-const timerMin = document.getElementById("timer-mins");
-const timerSec = document.getElementById("timer-secs");
-setInterval(() => {
-    let now = new Date().getTime();
-    let t = endDate - now;
-    if (t >= 0) {
-        // let days = Math.floor(t / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-        let secs = Math.floor((t % (1000 * 60)) / 1000);
-        // timerDay.innerHTML = days + "<span class='label'>DAY(S)</span>";
-        timerHour.innerHTML = hours + "<span class='label'>h</span>";
-        timerMin.innerHTML = mins + "<span class='label'>m</span>";
-        timerSec.innerHTML = secs + "<span class='label'>s</span>";
-    } else {
-        document.getElementById("timer").innerHTML = "The countdown is over!";
-    }
-}, 1000);
+// let endDate = new Date("Aug 13, 2023 00:00:00").getTime();
+// const timerDay = document.getElementById("timer-days");
+// const timerHour = document.getElementById("timer-hours");
+// const timerMin = document.getElementById("timer-mins");
+// const timerSec = document.getElementById("timer-secs");
+// setInterval(() => {
+//     let now = new Date().getTime();
+//     let t = endDate - now;
+//     if (t >= 0) {
+//         let days = Math.floor(t / (1000 * 60 * 60 * 24));
+//         let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//         let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+//         let secs = Math.floor((t % (1000 * 60)) / 1000);
+//         timerDay.innerHTML = days + "<span class='label'>d</span>";
+//         timerHour.innerHTML = hours + "<span class='label'>h</span>";
+//         timerMin.innerHTML = mins + "<span class='label'>m</span>";
+//         timerSec.innerHTML = secs + "<span class='label'>s</span>";
+//     } else {
+//         document.getElementById("timer").innerHTML = "The countdown is over!";
+//     }
+// }, 1000);
