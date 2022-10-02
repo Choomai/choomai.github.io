@@ -26,14 +26,14 @@
                 font-size: 80%;
             }
         </style>
-        <title id="tab-title"></title>
+        <title id="tab-title">404 - File or directory not found.</title>
     </head>
     <body id="body">
         <div class="container">
-            <h1 id="page-title" class="center"></h1>
+            <h1 id="page-title" class="center"><a href="/" class="title-txt">choomai.github.io</a> - Client Error</h1>
             <div id="err_info" class="err-info">
-                <div id="info_0"></div>
-                <div id="info_1"></div>
+                <div id="info_0">404 - File or directory not found.</div>
+                <div id="info_1">The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</div>
             </div>
             <div id="contact" class="center">
             </div>
@@ -83,19 +83,5 @@
             contact.appendChild(social);
         }
     };
-    function addTitle() {
-        domain = document.createElement("a");
-        domain.setAttribute("href","/");
-        domain.setAttribute("class","title-txt")
-        domain.textContent = window.location.hostname;
-        pagett.innerHTML = " - Client Error";
-        pagett.prepend(domain);
-    };
-    addTitle();
     addContact();
-    let main_info = "404 - File or directory not found.";
-    let sub_info = "The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.";
-    document.getElementById("info_0").innerHTML = main_info;
-    document.getElementById("info_1").innerHTML = sub_info;
-    tabtt.innerHTML = main_info;
 </script>
