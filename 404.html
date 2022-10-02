@@ -26,7 +26,6 @@
                 font-size: 80%;
             }
         </style>
-        <script src="/common_html.js" defer></script>
         <title id="tab-title"></title>
     </head>
     <body id="body">
@@ -42,15 +41,61 @@
     </body>
 </html>
 <script>
-    let domain = window.location.hostname;
-    let pagett = document.getElementById("page-title");
-    let tabtt = document.getElementById("tab-title");
+    // Prep.
+    let domain = null;
+    let path = window.location.pathname;
+    path = decodeURI(path);
+    const tabtt = document.getElementById("tab-title");
+    const pagett = document.getElementById("page-title");
+    let contact = document.getElementById("contact");
+    // End prep.
+    function addContact() {
+        let social = null;
+        let socialImg = null;
+        let email = document.createElement("h2")
+        email.setAttribute("class","center email");
+        email.textContent = "Email: ";
+        let emailURL = document.createElement("a")
+        emailURL.href = "mailto:nguyencaonguyen0944322545@gmail.com";
+        emailURL.style = "color:#4287F5";
+        emailURL.textContent = "nguyencaonguyen0944322545@gmail.com";
+        email.appendChild(emailURL);
+        contact.appendChild(email);
+        for (let i = 0; i <= 3; i++) {
+            const urlMap = [
+                "https://facebook.com/uranidiot0606",
+                "https://twitter.com/choomai0",
+                "https://github.com/Choomai",
+                "https://discord.gg/J8tsBMUfUY"
+            ];
+            const imgMap = [
+                "https://cdn-icons-png.flaticon.com/512/5968/5968764.png",
+                "https://cdn-icons-png.flaticon.com/128/733/733579.png",
+                "https://github.githubassets.com/favicons/favicon-dark.svg",
+                "https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
+            ];
+            social = document.createElement("a")
+            social.href = urlMap[i];
+            socialImg = document.createElement("img")
+            socialImg.setAttribute("class","profile")
+            socialImg.src = imgMap[i];
+            social.appendChild(socialImg);
+            contact.appendChild(social);
+        }
+    };
+    function addTitle() {
+        domain = document.createElement("a");
+        domain.setAttribute("href","/");
+        domain.setAttribute("class","title-txt")
+        domain.textContent = window.location.hostname;
+        pagett.innerHTML = " - Client Error";
+        pagett.prepend(domain);
+    };
+    addTitle();
+    addContact();
     let main_info = "404 - File or directory not found.";
     let sub_info = "The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.";
-    let info0 = document.getElementById("info_0");
-    let info1 = document.getElementById("info_1");
-    pagett.innerHTML = domain + " - Client Error";
-    tabtt.innerHTML = main_info
-    info0.innerHTML = main_info;
-    info1.innerHTML = sub_info;
+    document.getElementById("info_0").innerHTML = main_info;
+    document.getElementById("info_1").innerHTML = sub_info;
+    tabtt.innerHTML = main_info;
 </script>
