@@ -27,5 +27,4 @@ fetch("/error/errorinfo.json")
     document.getElementById("wait_notify").remove();
     info0.innerHTML = currentInfo.err[subStat].info_0;
     info1.innerHTML = currentInfo.err[subStat].info_1;
-    document.getElementById("iis").innerHTML = "Powered by IIS v10.0.19041.1 / Windows 10 Pro 21H2";
 })
