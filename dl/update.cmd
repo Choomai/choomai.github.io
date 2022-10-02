@@ -7,8 +7,8 @@ exit /b %ERRORLEVEL%
 :main
     if %~1==1 (node "F:\Choomai\dl\dirls_to_json.js") else (echo Aborted task ^"Update dirinfo.json^")
     if %~2==1 (
-        for /D /R "F:\Choomai\dl" %%J in (*) do (
-            xcopy /Y /D "F:\Choomai\dl\index.html" "%%~J"
+        for /D /R "F:\choomai.github.io\dl" %%J in (*) do (
+            xcopy /Y /D "F:\choomai.github.io\dl\index.html" "%%~J"
         )
     ) else (echo Aborted task ^"Copy index.html to all directory^")
     exit /b 0

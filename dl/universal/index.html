@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <meta name="color-scheme" content="dark">
+        <link rel="icon" href="/icons/network.ico"/>
+        <link rel="stylesheet" href="/general.css"/>
+        <link rel="stylesheet" href="/dl/directory.css"/>
+        <script src="/dl/client_dirls.js" defer></script>
+        <script src="/dl/dir_export.js" defer></script>
+        <title id="tab-title"></title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="page-title" class="page-title"></h1>
+            <hr class="sep">
+            <p class="center" id="wait_notify">Please wait, reading directory...<span style="color:teal">Not loading ? <b>Report a bug.</b></span></p>
+            <a href="/dl"><img class="invert home" src="https://cdn-icons-png.flaticon.com/512/25/25694.png"></a>
+            <table>
+                <thead>
+                    <th class="hname">Name</th>
+                    <th class="hmtime">Modified</th>
+                    <th class="htype">Type</th>
+                    <th class="hsize">Size</th>
+                </thead>
+                <tbody id="list">
+                    <tr>
+                        <td><a id="goback" style="color:gray" href="../" target="_self">Parent dir/</a></td>
+                        <td class="mtime">-</td>
+                        <td class="type">-</td>
+                        <td class="size">-</td>
+                    </tr>
+                </tbody>
+            </table><hr class="sep">
+            <p class="notice"><b>Download responsibly!</b></p>
+            <div id="contact" class="center"></div>
+            <script src="/common_html.js"></script>
+        </div>
+    </body>
+</html>
