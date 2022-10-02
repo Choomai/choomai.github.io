@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <meta name="color-scheme" content="dark">
+        <link rel="icon" href="/icons/error.ico"/>
+        <link rel="stylesheet" href="/general.css"/>
+        <style>
+            body {
+                padding-top: 18px;
+            }
+            .return {
+                color:gray;
+                text-decoration-color: gray;
+                padding-bottom: 10px;
+            }
+            .err-info {
+                max-width: 800px;
+                padding: 10px;
+                border-style: solid;
+                border-width: 2px;
+                border-radius: 5px;
+                border-color: #666666;
+            }
+            .email {
+                font-size: 80%;
+            }
+        </style>
+        <script src="/common_html.js" defer></script>
+        <title id="tab-title"></title>
+    </head>
+    <body id="body">
+        <div class="container">
+            <h1 id="page-title" class="center"></h1>
+            <div id="err_info" class="err-info">
+                <div id="info_0"></div>
+                <div id="info_1"></div>
+            </div>
+            <div id="contact" class="center">
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    let domain = window.location.hostname;
+    let pagett = document.getElementById("page-title");
+    let tabtt = document.getElementById("tab-title");
+    let main_info = "404 - File or directory not found.";
+    let sub_info = "The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.";
+    let info0 = document.getElementById("info_0");
+    let info1 = document.getElementById("info_1");
+    pagett.innerHTML = domain + " - Client Error";
+    tabtt.innerHTML = main_info
+    info0.innerHTML = main_info;
+    info1.innerHTML = sub_info;
+</script>
