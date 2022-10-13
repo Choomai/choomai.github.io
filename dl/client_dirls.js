@@ -13,6 +13,8 @@ const file_ext_map = {
     "rar": "WinRAR archive",
     "7z": "7-Zip archive",
     "zip": "ZIP archive",
+    "gz": "GZIP archive",
+    "tgz": "GZIP Tar File",
     "ozip": "Encrypted ZIP archive",
     "============================================":"=",
     "psd": "Photoshop Document",
@@ -20,6 +22,7 @@ const file_ext_map = {
     "raw": "Raw Image Data",
     "bmp": "Bitmap Image",
     "png": "PNG Image",
+    "webp": "WebP Image",
     "gif": "Graphic Interchange Format",
     "jpeg": "JPEG Image",
     "jpg": "JPEG Image",
@@ -32,6 +35,7 @@ const file_ext_map = {
     "============================================":"=",
     "mp4": "MPEG-4 Video",
     "mkv": "Matroska Video",
+    "webm": "WebM Video",
     "mov": "QuickTime Movie",
     "ts": "Transport Stream Video",
     "flv": "Flash Video File",
@@ -72,7 +76,8 @@ function createNameStat(name, path, type, file_ext) {
     } else {
         a.setAttribute("class","dir");
     }
-    a.setAttribute("href","/dl/" + path);
+    if (isDL(0)) {a.setAttribute("href","/dl/"+path);} // For directory dl
+    if (isDL(1)) {a.setAttribute("href","/"+path);} // For subdomain dl
     a.textContent = name;
     td.appendChild(a);
     return td;
