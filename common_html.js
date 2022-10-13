@@ -1,6 +1,6 @@
 // Prep.
 let domain = null;
-let path = window.location.pathname;
+let path = location.pathname;
 path = decodeURI(path);
 let slashMap = [];
 for (let i = 0; i < path.length; i++) {
@@ -10,27 +10,39 @@ for (let i = 0; i < path.length; i++) {
 };
 let slashCount = slashMap.length;
 let currentDir = null;
-if (path.substring(slashMap[slashCount-2]+1,slashMap[slashCount-1]) == "dl") {
+if (path.substring(slashMap[slashCount-2]+1,slashMap[slashCount-1]) == "dl" || (path == "/" && location.hostname.substring(0,2) == "dl")) {
     currentDir = "/";
 } else {
     currentDir = path.substring(slashMap[slashCount-2]+1,slashMap[slashCount-1]);
 }
+function isEmpty(inp) {
+    if (inp == "") {return true} else {return false}
+};
+function isDL(inp) {
+    tmp_path = location.pathname;
+    tmp_host = location.hostname;
+    if (inp == 0) {
+        if (tmp_path.substring(0,3) == "/dl") {return true} else {return false};
+    } else if (inp == 1) {
+        if (tmp_host.substring(0,2) == "dl") {return true} else {return false};
+    }
+}
 const tabtt = document.getElementById("tab-title");
 const pagett = document.getElementById("page-title");
-let contact = document.getElementById("contact");
+const contact = document.getElementById("contact");
 // End prep.
 function addContact(inp) {
-    let social = null;
-    let socialImg = null;
-    let email = document.createElement("h2")
-    email.setAttribute("class","center email");
-    if (inp == 1) {email.textContent = "Report bugs & corrupted files: "} else {email.textContent = "Email: "};
-    let emailURL = document.createElement("a")
-    emailURL.href = "mailto:nguyencaonguyen0944322545@gmail.com";
-    emailURL.style = "color:#4287F5";
-    emailURL.textContent = "nguyencaonguyen0944322545@gmail.com";
-    email.appendChild(emailURL);
-    contact.appendChild(email);
+    // let social = null;
+    // let socialImg = null;
+    // let email = document.createElement("h2")
+    // email.setAttribute("class","center email");
+    // if (inp == 1) {email.textContent = "Report bugs & corrupted files: "} else {email.textContent = "Email: "};
+    // let emailURL = document.createElement("a")
+    // emailURL.href = "mailto:nguyencaonguyen0944322545@gmail.com";
+    // emailURL.style = "color:#4287F5";
+    // emailURL.textContent = "nguyencaonguyen0944322545@gmail.com";
+    // email.appendChild(emailURL);
+    // contact.appendChild(email);
     for (let i = 0; i <= 3; i++) {
         const urlMap = [
             "https://facebook.com/uranidiot0606",
@@ -52,9 +64,6 @@ function addContact(inp) {
         social.appendChild(socialImg);
         contact.appendChild(social);
     }
-};
-function isEmpty(inp) {
-    if (inp == "") {return true} else {return false}
 };
 function addTitle(inp) {
     switch (inp) {
@@ -107,5 +116,6 @@ function addTitle(inp) {
             break;
     }
 };
+addContact();
 // If current page is /dl/*, return no-hyperlink title & "Report bugs & corrupted files: "
-if (path.substring(0,3) == "/dl") {addTitle(0);addContact(1);} else {addTitle(1);addContact(0)};
+if (path.substring(0,3) == "/dl" || location.hostname.substring(0,2) == "dl") {addTitle(0)} else {addTitle(1)};
