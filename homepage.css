@@ -1,0 +1,17 @@
+.son {
+    position: absolute;
+    top: 109px;
+    left: 517px;
+    width: 300px;
+}
+span.contributor {
+    position: absolute;
+    bottom: 0.2cm;
+    right: 0.2cm;
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
+span.contributor a {
+    color: white;
+}

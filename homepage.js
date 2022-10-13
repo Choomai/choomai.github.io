@@ -18,4 +18,4 @@ setInterval(() => {
     } else {
         document.getElementById("timer").innerHTML = "The countdown is over!";
     }
-}, 1000);
+}, 999);
