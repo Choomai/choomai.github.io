@@ -29,8 +29,8 @@ body {
     background-color: #7a7a7a;
 }
 ::-webkit-scrollbar-thumb:hover {
-    /* background: repeating-linear-gradient(-45deg,red 0%,yellow 7.14%,lime 14.28%,cyan 21.4%,blue 35.7%,magenta 42.84%,red 50%); */
-    background-color: #33cc33;
+    background: repeating-linear-gradient(-45deg,red 0%,yellow 7.14%,lime 14.28%,cyan 21.4%,blue 35.7%,magenta 42.84%,red 50%);
+    /* background-color: #33cc33; */
     border-radius: 10px;
 }
 * {

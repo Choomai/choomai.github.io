@@ -1,5 +1,5 @@
 body {
-    background: url("https://choomai.tk/imgs/09\ gettyimages-582227825.jpg");
+    background: url("https://dl.choomai.tk/imgs/09\ gettyimages-582227825.jpg");
     background-color: black;
     background-size: cover;
     background-attachment: fixed;
@@ -108,23 +108,33 @@ a.dir {
     text-decoration-color: yellow;
     color: yellow;
 }
+a.exe, a.msi, a.cmd, a.bat, a.com, a.ps1, a.vbscript, a.jar, a.apk, a.xapk, a.apkm {
+    /* Executeable type color */
+    text-decoration-color: aqua;
+    color: aqua;
+}
 a.a001, a.img, a.iso {
     /* Image type color */
     text-decoration-color:lime;
     color:lime;
 }
-a.rar, a.a7z, a.zip, a.gz, a.tgz, a.ozip {
+a.rar, a.a7z, a.zip, a.gz, a.tgz, a.lz4, a.ozip {
     /* Compressed type color */
     text-decoration-color:gold;
     color:gold;
 }
-a.url, a.txt, a.rtf, a.pdf, a.doc, a.docx, a.xls, a.xlsx, a.ppt, a.pptx {
-    /* Document type color */
+a.psd, a.ai, a.svg, a.eps, a.dng, a.raw, a.gpr, a.srw, a.bmp, a.png, a.gif, a.jpeg, a.jpg, a.jfif, a.webp {
+    /* Picture type color */
+    text-decoration-color: greenyellow;
+    color: greenyellow;
+}
+a.wav, a.flac, a.ogg, a.mp3 {
+    /* Audio type color */
     text-decoration-color: deepskyblue;
     color: deepskyblue;
 }
-a.psd, a.dng, a.raw, a.bmp, a.png, a.gif, a.jpeg, a.jpg, a.jfif, a.webp {
-    /* Picture type color */
-    text-decoration-color: dodgerblue;
-    color: dodgerblue;
+a.url, a.txt, a.rtf, a.pdf, a.doc, a.docx, a.xls, a.xlsx, a.ppt, a.pptx {
+    /* Document type color */
+    text-decoration-color: lightseagreen;
+    color: lightseagreen;
 }
