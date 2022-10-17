@@ -63,6 +63,7 @@ const file_ext_map = {
     "xlsx": "Excel Worksheet",
     "ppt": "PowerPoint 97-2003 Presentation",
     "pptx": "PowerPoint Presentation",
+    "pptm": "PowerPoint Macro-Enabled Presentation",
 };
 function rmvPls_wait() {
     const wait_notify = document.getElementById("wait_notify");

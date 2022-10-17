@@ -133,7 +133,7 @@ a.wav, a.flac, a.ogg, a.mp3 {
     text-decoration-color: deepskyblue;
     color: deepskyblue;
 }
-a.url, a.txt, a.rtf, a.pdf, a.doc, a.docx, a.xls, a.xlsx, a.ppt, a.pptx {
+a.url, a.txt, a.rtf, a.pdf, a.doc, a.docx, a.xls, a.xlsx, a.ppt, a.pptx, a.pptm {
     /* Document type color */
     text-decoration-color: lightseagreen;
     color: lightseagreen;
