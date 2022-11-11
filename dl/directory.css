@@ -1,5 +1,5 @@
 body {
-    background: url("/imgs/09\ gettyimages-582227825.jpg");
+    background: url("https://choomai.ddns.net/dl/imgs/09\ gettyimages-582227825.jpg");
     background-color: black;
     background-size: cover;
     background-attachment: fixed;
@@ -25,18 +25,29 @@ img.home {
     width: 0.75cm;
     height: 0.75cm;
 }
+div.addr-bar {
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    font-size: 14px;
+    color: white;
+}
+div.addr-bar a {
+    font-family: inherit;
+    color: inherit;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 table {
-    width: 16.8cm; /* 80% of container */
+    width: 80%; /* 80% of container */
+    /* width: 80%; */
     font-size: 14px;
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
     table-layout: fixed;
-}
-tbody {
     line-height: 0.85cm;
 }
-
 /* Header of table */
 .hname {
     max-width: 9.24cm; /* 55% of table */
@@ -72,6 +83,7 @@ td.name {
     text-overflow: clip;
     white-space: nowrap;
     overflow: hidden;
+    font-weight: bold;
 }
 td.name a {
     display: block;
@@ -108,13 +120,13 @@ a.dir {
     text-decoration-color: yellow;
     color: yellow;
 }
-a.exe, a.msi, a.cmd, a.bat, a.com, a.ps1, a.vbscript, a.jar, a.apk, a.xapk, a.apkm {
+a.exe, a.msi, a.cmd, a.bat, a.com, a.ps1, a.vbscript, a.sh, a.jar, a.apk, a.xapk, a.apkm {
     /* Executeable type color */
-    text-decoration-color: aqua;
-    color: aqua;
+    text-decoration-color: #0da7ee;
+    color: #0da7ee;
 }
 a.a001, a.img, a.iso {
-    /* Image type color */
+    /* Disc type color */
     text-decoration-color:lime;
     color:lime;
 }
@@ -123,7 +135,7 @@ a.rar, a.a7z, a.zip, a.gz, a.tgz, a.lz4, a.ozip {
     text-decoration-color:gold;
     color:gold;
 }
-a.psd, a.ai, a.svg, a.eps, a.dng, a.raw, a.gpr, a.srw, a.bmp, a.png, a.gif, a.jpeg, a.jpg, a.jfif, a.webp {
+a.psd, a.ai, a.svg, a.eps, a.dng, a.raw, a.gpr, a.srw, a.bmp, a.png, a.webp, a.gif, a.jpeg, a.jpg, a.jfif {
     /* Picture type color */
     text-decoration-color: greenyellow;
     color: greenyellow;
@@ -133,8 +145,13 @@ a.wav, a.flac, a.ogg, a.mp3 {
     text-decoration-color: deepskyblue;
     color: deepskyblue;
 }
-a.url, a.txt, a.rtf, a.pdf, a.doc, a.docx, a.xls, a.xlsx, a.ppt, a.pptx, a.pptm {
+a.mp4, a.mkv, a.webm, a.mov, a.ts, a.flv {
+    /* Video type color */
+    text-decoration-color: #1cf1bc;
+    color: #1cf1bc;
+}
+a.url, a.txt, a.rtf, a.md, a.pdf, a.doc, a.docx, a.xls, a.xlsx, a.ppt, a.pptx, a.pptm {
     /* Document type color */
-    text-decoration-color: lightseagreen;
-    color: lightseagreen;
+    text-decoration-color: #5599FF;
+    color: #5599FF;
 }
