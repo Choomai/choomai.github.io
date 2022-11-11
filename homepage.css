@@ -4,6 +4,11 @@
     left: 517px;
     width: 300px;
 }
+div.timer {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
 span.contributor {
     position: absolute;
     bottom: 0.2cm;
@@ -14,4 +19,21 @@ span.contributor {
 }
 span.contributor a {
     color: white;
+}
+div.audio {
+    position: absolute;
+    bottom: 0.1cm;
+    left: 0.1cm;
+}
+audio.audio-player {
+    position: absolute;
+    width: 9cm;
+    bottom: 0.08cm;
+    left: 0.1cm;
+}
+::-webkit-media-controls-panel {
+    background-color: #000000;
+}
+::-webkit-media-controls-current-time-display, ::-webkit-media-controls-time-remaining-display {
+    font-family: "Choco cooky";
 }

@@ -1,11 +1,11 @@
 @font-face 
 { 
     font-family: "Choco cooky";
-    src: local("Choco cooky"),url("https://choomai.ddns.net/fonts/Chococooky.woff") format("woff");
+    src: local("Choco cooky"),url("/fonts/Chococooky.woff") format("woff");
 }
 @font-face {
     font-family: "White Rabbit";
-    src: local("White Rabbit"),url("https://choomai.ddns.net/fonts/WhiteRabbit.woff") format("woff");
+    src: local("White Rabbit"),url("/fonts/WhiteRabbit.woff") format("woff");
 }
 @keyframes slide {
     0% {background-position-x: 0%;}
@@ -36,7 +36,7 @@
     border-radius: 10px;
 }
 body {
-    background: url("https://choomai.ddns.net/dl/imgs/10\ gettyimages-707445581.jpg");
+    background: url("/dl/imgs/10\ gettyimages-707445581.jpg");
     background-color: black;
     background-size: cover;
     background-attachment: fixed;
