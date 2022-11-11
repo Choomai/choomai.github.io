@@ -11,17 +11,14 @@ fetch("/dl/dirinfo.json")
         };
     };
     slashCount = slashMap.length;
-    function createNewRow (inp) {
-        let tr = document.createElement("tr");
-        tr.setAttribute("id",inp);
-        tr.setAttribute("class","items");
-        document.getElementById("list").appendChild(tr);
-    };
     let dir_prefix = dir;
     if (path != "/") {
         for (let i = 0; i < slashCount-1; i++) {
+            let keyword = path.substring(slashMap[i]+1,slashMap[i+1]);
+            let arrbarPath = path.substring(slashMap[0]+1,slashMap[i+1]);
+            dir_prefix = dir_prefix.children.find(data => data.name == keyword);
+            if (i != slashCount-2) {addAddressBar(arrbarPath, keyword);} else {addAddressBar("","")}
             console.log("Passed layer "+i+" of dirinfo.json");
-            dir_prefix = dir_prefix.children.find(data => data.name == path.substring(slashMap[i]+1,slashMap[i+1]));
         }
     }
     function addItem(val) {
