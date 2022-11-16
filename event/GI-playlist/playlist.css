@@ -1,0 +1,7 @@
+p.help {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: #000000AA;
+}

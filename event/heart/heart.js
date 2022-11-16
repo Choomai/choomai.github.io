@@ -3,12 +3,14 @@ const docElem = document.documentElement;
 const username = document.getElementById("username");
 let fontSize = params.get("size") || "40px";
 let color = params.get("color") || "pink";
-let rotate = (params.get("rotate") === "false"); // Default value is true, need color=rgb
+const wiggle = params.get("wiggle") ?? true; // Default value is true
+const rotate = (params.get("rotate") === "false"); // Default value is true, need color=rgb
 if (!fontSize.endsWith("px")) {fontSize = fontSize + "px"}; // If fontSize doesn't have "px", add it to string
 if (params.get("name")) username.innerHTML = params.get("name");
 docElem.style.setProperty("--size",fontSize);
 docElem.style.setProperty("--color",color);
-if (color == "rgb") {username.classList.replace("wiggle","rgb-txt")}
+if (color == "rgb") {username.classList.add("rgb-txt")}
+if (wiggle !== "false") {username.classList.add("wiggle")};
 if (rotate) {docElem.style.setProperty("--last","0deg")};
 /**********************************************************************/
 
@@ -225,7 +227,10 @@ let ParticlePool = (function() {
     }
     // handle (re-)sizing of the canvas
     function onResize() {
-        canvas.width  = Math.round(canvas.clientWidth / 1.25);
+        // Website's owner code
+        let mul_height,mul_width = NaN;
+        /**********************************************************************/
+        canvas.width = Math.round(canvas.clientWidth / 1.25);
         canvas.height = Math.round(canvas.clientHeight / 1.25);
     };
     window.onresize = onResize;
