@@ -3,15 +3,19 @@ const docElem = document.documentElement;
 const username = document.getElementById("username");
 let fontSize = params.get("size") || "40px";
 let color = params.get("color") || "pink";
-const wiggle = params.get("wiggle") ?? true; // Default value is true
-const rotate = (params.get("rotate") === "false"); // Default value is true, need color=rgb
+
+let wiggle = true;
+let rotate = true;
+if (params.get("wiggle") === "false") {wiggle = false};
+if (params.get("rotate") === "false") {rotate = false};
+
 if (!fontSize.endsWith("px")) {fontSize = fontSize + "px"}; // If fontSize doesn't have "px", add it to string
 if (params.get("name")) username.innerHTML = params.get("name");
 docElem.style.setProperty("--size",fontSize);
 docElem.style.setProperty("--color",color);
-if (color == "rgb") {username.classList.add("rgb-txt")}
-if (wiggle !== "false") {username.classList.add("wiggle")};
-if (rotate) {docElem.style.setProperty("--last","0deg")};
+if (!rotate) {docElem.style.setProperty("--last","0deg")};
+if (wiggle) {username.setAttribute("class","wiggle")}; // Easier to add class instead of multiple DOM classList.
+if (color == "rgb") {username.setAttribute("class","rgb-txt")}; // Same as the previous line.
 /**********************************************************************/
 
 
