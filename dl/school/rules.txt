@@ -1,0 +1,2 @@
+All files must not larger than 50MB.
+Reason: Optimize Github Pages build time.
