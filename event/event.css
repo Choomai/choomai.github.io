@@ -5,3 +5,16 @@ img.home {
 a.arg-output {
     color: white;
 }
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+tr td:first-child {
+    width: 3cm;
+}
+tr.sumbit {
+    text-align: center;
+}
+tr.sumbit td input {
+    width: 3cm;
+}

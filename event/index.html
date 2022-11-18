@@ -34,21 +34,43 @@
                         <li><b>wiggle=&lt;true|false&gt;</b> Enable/Disable wiggle animation. Default value is true</li>
                     </p>
                 </details>
-                <form>
-                    Argument Creator for <b>/heart/</b><br>
-                    Name: <input id="username" type="text"><br>
-                    Color: <input id="color" type="text"><br>
-                    Rotate: <select id="rotate" name="Rotate">
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select><br>
-                    Wiggle: <select id="wiggle" name="">
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select><br>
-                    <input type="button" value="Create" onclick="createArg()">
-                </form>
-                <span id="arg-output"></span>
+                <table>
+                    <thead><tr><th colspan="2">Argument Creator for <b>/heart/</b></th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>Name:</td>
+                            <td><input id="username" class="name-inp" oninput="createArg()" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Size:</td>
+                            <td><input id="size" class="size-inp" oninput="createArg()" type="number"></td>
+                        </tr>
+                        <tr>
+                            <td>Color:</td>
+                            <td><input id="color" class="color-inp" oninput="createArg()" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Rotate:</td>
+                            <td>
+                                <select id="rotate" class="rotate-inp" oninput="createArg()" name="Rotate">
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Wiggle:</td>
+                            <td>
+                                <select id="wiggle" class="wiggle-inp" oninput="createArg()" name="Wiggle">
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="sumbit"><td colspan="2"><input type="button" value="Create" onclick="createArg()"></td></tr>
+                    </tbody>
+                </table>
+                <a id="arg-output"></a>
             </p><hr class="sep">
             <footer id="contact" class="center">
                 <h2 class="center email">Email: <a style="color:#4287F5" href="mailto:report@choomai.tk">report@choomai.tk</a></h2>
