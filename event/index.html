@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="event.css">
         <script src="/common_html.js" defer></script>
         <script src="event_global.js" defer></script>
+        <script src="arg_creator.js" defer></script>
         <title id="tab-title">about:blank</title>
     </head>
     <body>
@@ -21,18 +22,33 @@
             <a class="homepage" href="/"><img class="home" src="https://cdn-icons-png.flaticon.com/512/609/609803.png"></a>
             <h1 id="page-title" class="page-title">Event Page</h1><hr class="sep">
             <p class="ls-event">
-                A heart but with "heart particle": <a style="color:pink"href="./heart/">/heart</a>
-                <details class="heart-arg">
+                A heart but with "heart particle": <a style="color:pink"href="./heart/">/heart</a><br>
+                <details>
                     <summary>Argument for <b>/heart/</b></summary>
                     <p>
                         Start with a question mark "?"<br>
                         Add "&" between each argument.
                         <li><b>name=&lt;Name to display&gt;</b> Display at the center of the heart.</li>
-                        <li><b>color=&lt;Known color&gt;</b> Support chroma (rgb) color. Doesn't support custom color.</li>
+                        <li><b>color=&lt;Known color&gt;</b> Support chroma (rgb) color. Custom color is only in hex format. PLEASE REMOVE # in URL.</li>
                         <li><b>rotate=&lt;true|false&gt;</b> Only applied when color is rgb. Default value is true</li>
                         <li><b>wiggle=&lt;true|false&gt;</b> Enable/Disable wiggle animation. Default value is true</li>
                     </p>
                 </details>
+                <form>
+                    Argument Creator for <b>/heart/</b><br>
+                    Name: <input id="username" type="text"><br>
+                    Color: <input id="color" type="text"><br>
+                    Rotate: <select id="rotate" name="Rotate">
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select><br>
+                    Wiggle: <select id="wiggle" name="">
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select><br>
+                    <input type="button" value="Create" onclick="createArg()">
+                </form>
+                <span id="arg-output"></span>
             </p><hr class="sep">
             <footer id="contact" class="center">
                 <h2 class="center email">Email: <a style="color:#4287F5" href="mailto:report@choomai.tk">report@choomai.tk</a></h2>

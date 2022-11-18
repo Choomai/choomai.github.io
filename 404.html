@@ -36,58 +36,19 @@
     </head>
     <body id="body">
         <div class="container">
-            <h1 id="page-title" class="center"><a href="/" class="title-txt">choomai.github.io</a> - Client Error</h1>
+            <h1 id="page-title" class="center"><a href="/" class="title-txt">choomai.ga</a> - Client Error</h1>
             <div id="err_info" class="err-info">
                 <div id="info_0">404 - File or directory not found.</div>
                 <div id="info_1">The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</div>
             </div>
             <span class="service">Powered by Github Pages / Choomai/choomai.github.io</span>
-            <div id="contact" class="center"></div>
+            <div id="contact" class="center">
+                <h2 class="email center">Email: <a href="mailto:report@choomai.tk" style="color:#4287F5">report@choomai.tk</a></h2>
+                <a href="https://facebook.com/uranidiot0606"><img class="profile" src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png"></a>
+                <a href="https://twitter.com/choomai0"><img class="profile" src="https://cdn-icons-png.flaticon.com/128/733/733579.png"></a>
+                <a href="https://github.com/Choomai"><img class="profile" src="https://github.githubassets.com/favicons/favicon-dark.svg"></a>
+                <a href="https://discord.gg/J8tsBMUfUY"><img class="profile" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"></a>
+            </div>
         </div>
     </body>
 </html>
-<script>
-    // Prep.
-    let domain = null;
-    let path = window.location.pathname;
-    path = decodeURI(path);
-    const tabtt = document.getElementById("tab-title");
-    const pagett = document.getElementById("page-title");
-    let contact = document.getElementById("contact");
-    // End prep.
-    function addContact() {
-        let social = null;
-        let socialImg = null;
-        let email = document.createElement("h2")
-        email.setAttribute("class","center email");
-        email.textContent = "Email: ";
-        let emailURL = document.createElement("a")
-        emailURL.href = "mailto:nguyencaonguyen0944322545@gmail.com";
-        emailURL.style = "color:#4287F5";
-        emailURL.textContent = "nguyencaonguyen0944322545@gmail.com";
-        email.appendChild(emailURL);
-        contact.appendChild(email);
-        for (let i = 0; i <= 3; i++) {
-            const urlMap = [
-                "https://facebook.com/uranidiot0606",
-                "https://twitter.com/choomai0",
-                "https://github.com/Choomai",
-                "https://discord.gg/J8tsBMUfUY"
-            ];
-            const imgMap = [
-                "https://cdn-icons-png.flaticon.com/512/5968/5968764.png",
-                "https://cdn-icons-png.flaticon.com/128/733/733579.png",
-                "https://github.githubassets.com/favicons/favicon-dark.svg",
-                "https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
-            ];
-            social = document.createElement("a")
-            social.href = urlMap[i];
-            socialImg = document.createElement("img")
-            socialImg.setAttribute("class","profile")
-            socialImg.src = imgMap[i];
-            social.appendChild(socialImg);
-            contact.appendChild(social);
-        }
-    };
-    addContact();
-</script>

@@ -12,7 +12,7 @@ if (params.get("rotate") === "false") {rotate = false};
 if (!fontSize.endsWith("px")) {fontSize = fontSize + "px"}; // If fontSize doesn't have "px", add it to string
 if (params.get("name")) username.innerHTML = params.get("name");
 docElem.style.setProperty("--size",fontSize);
-docElem.style.setProperty("--color",color);
+if (isHex.test(color)) {docElem.style.setProperty("--color","#"+color)} else if (isHexWithHashtag.test(knownColor[color])) {docElem.style.setProperty("--color",color)};
 if (!rotate) {docElem.style.setProperty("--last","0deg")};
 if (wiggle) {username.setAttribute("class","wiggle")}; // Easier to add class instead of multiple DOM classList.
 if (color == "rgb") {username.setAttribute("class","rgb-txt")}; // Same as the previous line.

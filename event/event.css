@@ -1,10 +1,7 @@
-p.ls-event {
-    margin-left: 15px;
-}
-details.heart-arg {
-    margin-left: 25px;
-}
 img.home {
     width: 0.75cm;
     height: 0.75cm;
+}
+a.arg-output {
+    color: white;
 }
