@@ -1,7 +1,5 @@
 // Prep.
 const tabtt = document.getElementById("tab-title");
-const pagett = document.getElementById("page-title");
-const contact = document.getElementById("contact");
 const docElem = document.documentElement;
 let domain = null;
 let path = location.pathname;
@@ -34,19 +32,19 @@ const dummytxt = [ // Is there any JS function to create dummy text ?
 // End prep.
 function createPopup(content) {
     let popup = document.createElement("div");
-    let closeButton = document.createElement("span")
+    let closeButton = document.createElement("span");
     popup.id = "popup"; 
     popup.classList.add("popup");
     closeButton.classList.add("close-popup");
     closeButton.innerHTML = "&times;";
     closeButton.setAttribute("onclick","removePopup()");
-    popup.innerHTML = content;
+    popup.textContent = content;
     popup.appendChild(closeButton);
     docElem.style.setProperty("--blur-amount","5px");
     docElem.style.setProperty("--alpha-amount","30%");
     document.body.appendChild(popup);
     setTimeout(() => { // Do the transition
-        let appendPopup = document.getElementById("popup");
+        const appendPopup = document.getElementById("popup");
         appendPopup.style.transform = "translateY(-50%)";
         appendPopup.style.filter = "opacity(1)";
     }, 50);
@@ -57,13 +55,11 @@ function removePopup() {
     docElem.style.setProperty("--alpha-amount","0%");
     appendPopup.style.transform = "translateY(-75vh)";
     appendPopup.style.filter = "opacity(0)";
-    setTimeout(() => {
-        appendPopup.remove();
-    }, 500);
+    setTimeout(() => {appendPopup.remove()},500);
 }
 function addContact(inp) {
-    /* let social = null;
-    let socialImg = null;
+    const contact = document.getElementById("contact");
+    /* let social,socialImg = null;
     let email = document.createElement("h2");
     email.setAttribute("class","center email");
     if (inp == 1) {email.textContent = "Report bugs & corrupted files: "} else {email.textContent = "Email: "};
@@ -96,9 +92,10 @@ function addContact(inp) {
     }
 };
 function addTitle(inp) {
+    const pagett = document.getElementById("page-title");
     switch (inp) {
         case 0:
-            domain = window.location.hostname;
+            domain = location.hostname;
             // If HTTP error, return Client / Server Error title
             if (typeof errCode == "number") {
                 if (errCode >= 500) {
@@ -109,22 +106,22 @@ function addTitle(inp) {
             };
             // Convert /dl/ to dl.*
             if (path.substring(0,3) == "/dl") {
-                domain = "dl." + window.location.hostname;
+                domain = "dl." + location.hostname;
                 path = path.substring(3,path.length);
             };
-            if (isEmpty(tabtt.textContent)) {
+            if (isEmpty(tabtt.textContent) && (isDL(0) || isDL(1))) {
                 // tabtt.innerHTML = path + " - " + domain;
                 tabtt.innerHTML = currentDir + " - Server Repository";
-            };
-            if (isEmpty(pagett.textContent)) {
-                pagett.innerHTML = domain + " - " + currentDir;
-            };
+            } else if (isEmpty(tabtt.textContent)) {tabtt.innerHTML = currentDir};
+            try {
+                if (isEmpty(pagett.textContent)) {pagett.innerHTML = domain + " - " + currentDir};
+            } catch (err) {console.warn("Can't find any page-tt HTML tags.")}
             break;
         case 1:
             domain = document.createElement("a");
             domain.setAttribute("href","/");
             domain.setAttribute("class","title-txt")
-            domain.textContent = window.location.hostname;
+            domain.textContent = location.hostname;
             // If HTTP error, return Client / Server Error title
             if (typeof errCode == "number") {
                 if (errCode >= 500) {
@@ -135,17 +132,21 @@ function addTitle(inp) {
                     pagett.prepend(domain);
                 };
             };
-            if (isEmpty(tabtt.textContent)) {
-                // tabtt.innerHTML = path + " - " + domain.textContent;
+            if (isEmpty(tabtt.textContent) && (isDL(0) || isDL(1))) {
+                // tabtt.innerHTML = path + " - " + domain;
                 tabtt.innerHTML = currentDir + " - Server Repository";
+            } else if (isEmpty(tabtt.textContent)) {
+                tabtt.innerHTML = currentDir;
             };
-            if (isEmpty(pagett.textContent)) {
-                pagett.innerHTML = " - " + path;
-                pagett.prepend(domain);
-            };
+            try { 
+                if (isEmpty(pagett.textContent)) {
+                    pagett.innerHTML = " - " + path;
+                    pagett.prepend(domain);
+                };
+            } catch (err) {console.warn("Can't find any page-tt HTML tags.")}
             break;
-    }
+    };
 };
-addContact(NaN);
+try {addContact(NaN);} catch (err) {console.warn("Can't find any contacts HTML tags to add.")}
 // If current page is /dl/*, return no-hyperlink title
 if (path.substring(0,3) == "/dl" || location.hostname.substring(0,2) == "dl") {addTitle(0)} else {addTitle(1)};
