@@ -20,4 +20,4 @@ let timerFunc = setInterval(() => {
         document.getElementById("timer").innerHTML = "The countdown is over!";
         clearInterval(timerFunc);
     };
-}, 1000);
+}, 100);
