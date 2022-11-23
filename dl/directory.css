@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Noto%20Sans");
 body {
-    background: url("https://choomai.ddns.net/dl/imgs/09\ gettyimages-582227825.jpg");
+    background: url("https://choomai.ga/dl/imgs/09\ gettyimages-582227825.jpg");
     background-color: black;
     background-size: cover;
     background-attachment: fixed;
@@ -7,6 +8,7 @@ body {
     background-repeat: no-repeat;
     padding-top: 15px;
 }
+* {font-family: 'Noto Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 h1.page-title {
     font-size: 0.6cm;
     text-align: center;
