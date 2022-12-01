@@ -59,7 +59,8 @@ function removePopup() {
 }
 function addContact(inp) {
     const contact = document.getElementById("contact");
-    /* let social,socialImg = null;
+    /* 
+    let social,socialImg = null;
     let email = document.createElement("h2");
     email.setAttribute("class","center email");
     if (inp == 1) {email.textContent = "Report bugs & corrupted files: "} else {email.textContent = "Email: "};
@@ -68,7 +69,8 @@ function addContact(inp) {
     emailURL.style = "color:#4287F5";
     emailURL.textContent = "nguyencaonguyen0944322545@gmail.com";
     email.appendChild(emailURL);
-    contact.appendChild(email); */
+    contact.appendChild(email); 
+    */
     for (let i = 0; i <= 3; i++) {
         const urlMap = [
             "https://facebook.com/uranidiot0606",
@@ -77,7 +79,7 @@ function addContact(inp) {
             "https://discord.gg/J8tsBMUfUY"
         ];
         const imgMap = [
-            "https://cdn-icons-png.flaticon.com/512/5968/5968764.png",
+            "/dl/imgs/Facebook.svg",
             "https://cdn-icons-png.flaticon.com/128/733/733579.png",
             "https://github.githubassets.com/favicons/favicon-dark.svg",
             "https://cdn-icons-png.flaticon.com/512/5968/5968756.png"

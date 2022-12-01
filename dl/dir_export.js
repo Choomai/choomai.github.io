@@ -1,4 +1,4 @@
-fetch("https://choomai.ga/dl/dirinfo.json")
+fetch("/dl/dirinfo.json")
 .then(response => {
     return response.json();
 })
