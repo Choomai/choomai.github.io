@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
-<html>
+<html lang="en">
     <head>
-        <meta name="color-scheme" content="dark">    
+        <!-- For SEO / Start -->
+        <meta name="description" content="Experimental stuff that I can't move to the homepage😅">
+        <meta name="keywords" content="choomai experimental">
+        <meta name="author" content="Nguyen Cao Nguyen">
+        <!-- For SEO / End -->
+        <meta name="color-scheme" content="dark">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="/icons/warning.ico"/>
         <link rel="stylesheet" href="/general.css"/>
         <link rel="stylesheet" href="confirm.css"/>
@@ -19,11 +25,14 @@
                     If you feel uncomfortable looking at them, refrain from watching or navigate at your own risk.<br>
                     You've been warned.<br>
                 </span>
-                <input class="def-color" type="radio" id="continue" name="policy">Open userdebug.mp4<br>
-                <input class="def-color" type="radio" id="vidoverlay" name="policy">Try your luck 🤔<br>
-                <input class="def-color" type="Submit" onClick="redirectV2()">
+                <input type="radio" id="continue" name="policy">Open userdebug.mp4<br>
+                <input type="radio" id="vidoverlay" name="policy">Try your luck 🤔<br>
+                <input type="submit" value="Proceed with selection" onClick="redirectV2()">
+                <input class="popup-button" type="button" value="Create a popup" onclick="createPopup(dummytxt[0])">
             </div><hr class="sep">
-            <div id="contact" class="center"></div>
+            <footer id="contact" class="center">
+                <h2 class="center email">Email: <a style="color:#4287F5" href="mailto:report@choomai.tk">report@choomai.tk</a></h2>
+            </footer>
         </div>
     </body>
 </html>

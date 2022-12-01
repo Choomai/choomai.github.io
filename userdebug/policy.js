@@ -8,7 +8,7 @@ let totalClick = 0;
 let hasClicked = false;
 let vid = null;
 function vidbase() {
-    document.getElementById("txt").innerHTML = '<b>WARN: Scripts may close only the windows that were opened by them.<b>.<br><video id="vid" class="fullscreen" loop></video>';
+    document.getElementById("txt").innerHTML = "<b style:\"color:yellow\">WARN: Scripts may close only the windows that were opened by them.<b>.<br><video id=\"vid\" class=\"fullscreen\" loop></video>";
     vid = document.getElementById("vid");
 };
 function vid_reqfs(vid_inp) {
@@ -27,10 +27,10 @@ function closetab() {
 };
 function redirect() {
     if(document.getElementById("continue").checked) {
-        alert("I've disabled this option because someone won't let me enable it...");
-        // vidbase();
-        // vid_reqfs("userdebug.mp4");
-        // vid.style.objectFit = "cover";
+        // alert("I've disabled this option because someone won't let me enable it...");
+        vidbase();
+        vid_reqfs("userdebug.mp4");
+        vid.style.objectFit = "cover";
     }
     else if(document.getElementById("vidoverlay").checked) {
         // Try your luck here 😂
