@@ -1,9 +1,7 @@
 // Prep.
-const tabtt = document.getElementById("tab-title");
 const docElem = document.documentElement;
 let domain = null;
-let path = location.pathname;
-path = decodeURI(path);
+let path = decodeURI(location.pathname);
 let slashMap = [];
 for (let i = 0; i < path.length; i++) {
     if (path[i] == "/") {slashMap.push(i);};
@@ -13,7 +11,6 @@ let currentDir = null;
 if (path.substring(slashMap[slashCount-2]+1,slashMap[slashCount-1]) == "dl" || (path == "/" && location.hostname.substring(0,2) == "dl")) {
     currentDir = "/";
 } else {currentDir = path.substring(slashMap[slashCount-2]+1,slashMap[slashCount-1]);}
-function isEmpty(inp) {if (inp == "") {return true} else {return false}};
 function isDL(inp) {
     tmp_path = location.pathname;
     tmp_host = location.hostname;
@@ -50,14 +47,14 @@ function createPopup(content) {
     }, 50);
 }
 function removePopup() {
-    let appendPopup = document.getElementById("popup");
+    const appendPopup = document.getElementById("popup");
     docElem.style.setProperty("--blur-amount","0px");
     docElem.style.setProperty("--alpha-amount","0%");
     appendPopup.style.transform = "translateY(-75vh)";
     appendPopup.style.filter = "opacity(0)";
     setTimeout(() => {appendPopup.remove()},500);
 }
-function addContact(inp) {
+function addContact(type) {
     const contact = document.getElementById("contact");
     /* 
     let social,socialImg = null;
@@ -79,7 +76,7 @@ function addContact(inp) {
             "https://discord.gg/J8tsBMUfUY"
         ];
         const imgMap = [
-            "/dl/imgs/Facebook.svg",
+            "https://choomai.ddns.net/dl/imgs/Facebook.svg",
             "https://cdn-icons-png.flaticon.com/128/733/733579.png",
             "https://github.githubassets.com/favicons/favicon-dark.svg",
             "https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
@@ -93,9 +90,9 @@ function addContact(inp) {
         contact.appendChild(social);
     }
 };
-function addTitle(inp) {
+function addTitle(type) {
     const pagett = document.getElementById("page-title");
-    switch (inp) {
+    switch (type) {
         case 0:
             domain = location.hostname;
             // If HTTP error, return Client / Server Error title
@@ -111,12 +108,11 @@ function addTitle(inp) {
                 domain = "dl." + location.hostname;
                 path = path.substring(3,path.length);
             };
-            if (isEmpty(tabtt.textContent) && (isDL(0) || isDL(1))) {
-                // tabtt.innerHTML = path + " - " + domain;
-                tabtt.innerHTML = currentDir + " - Server Repository";
-            } else if (isEmpty(tabtt.textContent)) {tabtt.innerHTML = currentDir};
+            if ((!document.title) && (isDL(0) || isDL(1))) {
+                document.title = currentDir + " - Server Repository";
+            } else if ((!document.title)) {document.title = currentDir};
             try {
-                if (isEmpty(pagett.textContent)) {pagett.innerHTML = domain + " - " + currentDir};
+                if (!pagett.textContent) {pagett.innerHTML = domain + " - " + currentDir};
             } catch (err) {console.warn("Can't find any page-tt HTML tags.")}
             break;
         case 1:
@@ -134,14 +130,11 @@ function addTitle(inp) {
                     pagett.prepend(domain);
                 };
             };
-            if (isEmpty(tabtt.textContent) && (isDL(0) || isDL(1))) {
-                // tabtt.innerHTML = path + " - " + domain;
-                tabtt.innerHTML = currentDir + " - Server Repository";
-            } else if (isEmpty(tabtt.textContent)) {
-                tabtt.innerHTML = currentDir;
-            };
+            if ((!document.title) && (isDL(0) || isDL(1))) {
+                document.title = currentDir + " - Server Repository";
+            } else if (!document.title) {document.title = currentDir};
             try { 
-                if (isEmpty(pagett.textContent)) {
+                if (!pagett.textContent) {
                     pagett.innerHTML = " - " + path;
                     pagett.prepend(domain);
                 };
@@ -149,6 +142,6 @@ function addTitle(inp) {
             break;
     };
 };
-try {addContact(NaN);} catch (err) {console.warn("Can't find any contacts HTML tags to add.")}
+try {addContact(NaN)} catch (err) {console.warn("Can't find any contacts HTML tags to add.")}
 // If current page is /dl/*, return no-hyperlink title
 if (path.substring(0,3) == "/dl" || location.hostname.substring(0,2) == "dl") {addTitle(0)} else {addTitle(1)};

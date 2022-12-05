@@ -339,6 +339,14 @@
                             "size": 1178346
                         },
                         {
+                            "path": "archive/Genshin Impact/1669730547572.jpeg",
+                            "name": "1669730547572.jpeg",
+                            "type": "file",
+                            "mtime": "2022-11-29T14:02:30.591Z",
+                            "extension": ".jpeg",
+                            "size": 1055672
+                        },
+                        {
                             "path": "archive/Genshin Impact/Choomai's Year-In-Review.url",
                             "name": "Choomai's Year-In-Review.url",
                             "type": "file",
@@ -348,13 +356,13 @@
                         }
                     ],
                     "type": "directory",
-                    "mtime": "2022-12-01T12:57:37.404Z",
-                    "size": 84543168
+                    "mtime": "2022-12-04T16:00:22.006Z",
+                    "size": 85598840
                 }
             ],
             "type": "directory",
             "mtime": "2022-12-01T12:57:35.240Z",
-            "size": 84543168
+            "size": 85598840
         },
         {
             "path": "imgs",
@@ -649,7 +657,7 @@
                             "path": "school/1/bài-1-chuyên-đề-lý.pptx",
                             "name": "bài-1-chuyên-đề-lý.pptx",
                             "type": "file",
-                            "mtime": "2022-09-23T13:54:11.670Z",
+                            "mtime": "2022-12-01T14:08:24.141Z",
                             "extension": ".pptx",
                             "size": 3148912
                         },
@@ -657,7 +665,7 @@
                             "path": "school/1/bài-2-chuyên-đề-lý.pptx",
                             "name": "bài-2-chuyên-đề-lý.pptx",
                             "type": "file",
-                            "mtime": "2022-10-16T16:14:15.482Z",
+                            "mtime": "2022-12-01T14:08:24.141Z",
                             "extension": ".pptx",
                             "size": 20213374
                         },
@@ -665,7 +673,7 @@
                             "path": "school/1/Bài-9-thực-hành-thí-nghiệm-hóa-học-ảo-1.pptx",
                             "name": "Bài-9-thực-hành-thí-nghiệm-hóa-học-ảo-1.pptx",
                             "type": "file",
-                            "mtime": "2022-10-28T22:59:02.569Z",
+                            "mtime": "2022-12-01T14:08:24.141Z",
                             "extension": ".pptx",
                             "size": 8378292
                         },
@@ -673,7 +681,7 @@
                             "path": "school/1/bài-thuyết-trình-LỊCH-SỬ.pptx",
                             "name": "bài-thuyết-trình-LỊCH-SỬ.pptx",
                             "type": "file",
-                            "mtime": "2022-10-23T13:43:09.541Z",
+                            "mtime": "2022-12-01T14:08:24.142Z",
                             "extension": ".pptx",
                             "size": 327020
                         },
@@ -681,7 +689,7 @@
                             "path": "school/1/phân-tích-tác-phẩm-tổ-1-10b2.pptx",
                             "name": "phân-tích-tác-phẩm-tổ-1-10b2.pptx",
                             "type": "file",
-                            "mtime": "2022-10-11T22:56:18.323Z",
+                            "mtime": "2022-12-01T14:08:24.142Z",
                             "extension": ".pptx",
                             "size": 3047072
                         },
@@ -714,7 +722,7 @@
                             "path": "school/2/Intro-mở-đầu.pptx",
                             "name": "Intro-mở-đầu.pptx",
                             "type": "file",
-                            "mtime": "2022-10-05T15:10:43.914Z",
+                            "mtime": "2022-12-01T14:08:24.142Z",
                             "extension": ".pptx",
                             "size": 1607215
                         },
@@ -755,7 +763,7 @@
                             "path": "school/3/Hạt cơ bản và Năng lượng cao.pptx",
                             "name": "Hạt cơ bản và Năng lượng cao.pptx",
                             "type": "file",
-                            "mtime": "2022-10-24T15:34:19.920Z",
+                            "mtime": "2022-12-01T14:08:24.143Z",
                             "extension": ".pptx",
                             "size": 4319274
                         },
@@ -763,7 +771,7 @@
                             "path": "school/3/Thuyết-Trình-Hoá-Tổ-3.pptx",
                             "name": "Thuyết-Trình-Hoá-Tổ-3.pptx",
                             "type": "file",
-                            "mtime": "2022-10-07T23:29:15.000Z",
+                            "mtime": "2022-12-01T14:08:24.143Z",
                             "extension": ".pptx",
                             "size": 3516432
                         }
@@ -780,7 +788,7 @@
                             "path": "school/4/hóa01.pptx",
                             "name": "hóa01.pptx",
                             "type": "file",
-                            "mtime": "2022-10-05T21:51:25.210Z",
+                            "mtime": "2022-12-01T14:08:24.143Z",
                             "extension": ".pptx",
                             "size": 2554111
                         },
@@ -788,7 +796,7 @@
                             "path": "school/4/lịch-sử.pptx",
                             "name": "lịch-sử.pptx",
                             "type": "file",
-                            "mtime": "2022-10-23T16:21:23.552Z",
+                            "mtime": "2022-12-01T14:08:24.143Z",
                             "extension": ".pptx",
                             "size": 12967222
                         },
@@ -796,7 +804,7 @@
                             "path": "school/4/vl-laser-ysinh.pptx",
                             "name": "vl-laser-ysinh.pptx",
                             "type": "file",
-                            "mtime": "2022-10-30T12:36:30.778Z",
+                            "mtime": "2022-12-01T14:08:24.143Z",
                             "extension": ".pptx",
                             "size": 7733913
                         }
@@ -899,9 +907,9 @@
                     "path": "universal/minecraft.mp3",
                     "name": "minecraft.mp3",
                     "type": "file",
-                    "mtime": "2022-10-30T09:15:24.248Z",
+                    "mtime": "2022-12-01T14:08:20.717Z",
                     "extension": ".mp3",
-                    "size": 73296864
+                    "size": 36664508
                 },
                 {
                     "path": "universal/question-5-10-english.docx",
@@ -978,11 +986,11 @@
                 }
             ],
             "type": "directory",
-            "mtime": "2022-12-01T12:58:38.664Z",
-            "size": 136448560
+            "mtime": "2022-12-05T09:49:58.762Z",
+            "size": 99816204
         }
     ],
     "type": "directory",
     "mtime": "2022-12-01T12:57:47.131Z",
-    "size": 405671762
+    "size": 370095078
 }
