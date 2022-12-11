@@ -864,6 +864,14 @@
                     "size": 16702026
                 },
                 {
+                    "path": "universal/cringe_af.aac",
+                    "name": "cringe_af.aac",
+                    "type": "file",
+                    "mtime": "2022-12-10T23:51:36.026Z",
+                    "extension": ".aac",
+                    "size": 5483989
+                },
+                {
                     "path": "universal/câuhoitanh.docx",
                     "name": "câuhoitanh.docx",
                     "type": "file",
@@ -936,53 +944,12 @@
                     "size": 599
                 },
                 {
-                    "path": "universal/skin_tmp",
-                    "name": "skin_tmp",
-                    "children": [
-                        {
-                            "path": "universal/skin_tmp/unknown_128.png",
-                            "name": "unknown_128.png",
-                            "type": "file",
-                            "mtime": "2022-11-05T15:09:43.562Z",
-                            "extension": ".png",
-                            "size": 814
-                        },
-                        {
-                            "path": "universal/skin_tmp/unknown_256.png",
-                            "name": "unknown_256.png",
-                            "type": "file",
-                            "mtime": "2022-11-05T15:09:07.379Z",
-                            "extension": ".png",
-                            "size": 1755
-                        },
-                        {
-                            "path": "universal/skin_tmp/unknown_512.png",
-                            "name": "unknown_512.png",
-                            "type": "file",
-                            "mtime": "2022-11-05T15:08:47.709Z",
-                            "extension": ".png",
-                            "size": 3792
-                        },
-                        {
-                            "path": "universal/skin_tmp/unknown_64.png",
-                            "name": "unknown_64.png",
-                            "type": "file",
-                            "mtime": "2022-11-05T15:09:24.479Z",
-                            "extension": ".png",
-                            "size": 452
-                        },
-                        {
-                            "path": "universal/skin_tmp/unknown_900.png",
-                            "name": "unknown_900.png",
-                            "type": "file",
-                            "mtime": "2022-11-05T15:43:52.363Z",
-                            "extension": ".png",
-                            "size": 6018
-                        }
-                    ],
-                    "type": "directory",
-                    "mtime": "2022-12-01T12:57:54.817Z",
-                    "size": 12831
+                    "path": "universal/SpeakingTest.docx",
+                    "name": "SpeakingTest.docx",
+                    "type": "file",
+                    "mtime": "2022-12-07T07:27:38.811Z",
+                    "extension": ".docx",
+                    "size": 18228
                 },
                 {
                     "path": "universal/toản.m4a",
@@ -1010,11 +977,11 @@
                 }
             ],
             "type": "directory",
-            "mtime": "2022-12-07T07:24:36.892Z",
-            "size": 123106445
+            "mtime": "2022-12-11T00:27:38.821Z",
+            "size": 128595831
         }
     ],
     "type": "directory",
     "mtime": "2022-12-01T12:57:47.131Z",
-    "size": 393385319
+    "size": 398874705
 }
