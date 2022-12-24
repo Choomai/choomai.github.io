@@ -1,0 +1,29 @@
+p.cntr-3 {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 125px;
+}
+p.cntr-2 {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 125px;
+}
+p.cntr-1 {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 125px;
+    text-align: center;
+}
+span.contrib {
+    flex: 1;
+    text-align: center;
+}
+img.contrib {
+    width: 5cm;
+    background-color: #D0D0D0;
+    padding: 5px;
+    vertical-align: middle;
+}

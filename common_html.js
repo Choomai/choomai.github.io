@@ -28,8 +28,11 @@ const dummytxt = [ // Is there any JS function to create dummy text ?
 ];
 // End prep.
 function createPopup(content) {
+    let popup_container = document.createElement("div");
     let popup = document.createElement("div");
     let closeButton = document.createElement("span");
+    popup_container.id = "popup-container"
+    popup_container.classList.add("container-fullpage");
     popup.id = "popup"; 
     popup.classList.add("popup");
     closeButton.classList.add("close-popup");
@@ -39,15 +42,16 @@ function createPopup(content) {
     popup.appendChild(closeButton);
     docElem.style.setProperty("--blur-amount","5px");
     docElem.style.setProperty("--alpha-amount","30%");
-    document.body.appendChild(popup);
+    popup_container.appendChild(popup);
+    document.body.appendChild(popup_container);
     setTimeout(() => { // Do the transition
-        const appendPopup = document.getElementById("popup");
-        appendPopup.style.transform = "translateY(-50%)";
+        const appendPopup = document.getElementById("popup-container");
+        appendPopup.style.transform = "translateY(0%)";
         appendPopup.style.filter = "opacity(1)";
     }, 50);
 }
 function removePopup() {
-    const appendPopup = document.getElementById("popup");
+    const appendPopup = document.getElementById("popup-container");
     docElem.style.setProperty("--blur-amount","0px");
     docElem.style.setProperty("--alpha-amount","0%");
     appendPopup.style.transform = "translateY(-75vh)";

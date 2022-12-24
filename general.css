@@ -4,23 +4,18 @@
     src: local("Choco cooky"),url("/fonts/Chococooky.woff") format("woff");
 }
 @font-face {
-    font-family: "White Rabbit";
+    font-family: "Minecraft";
     src: local("White Rabbit"),url("/fonts/WhiteRabbit.woff") format("woff");
+}
+@font-face {
+    font-family: "Minecraft";
+    font-style: normal;
+    src: url("/fonts/MinecraftRegular-Bmg3.otf") format("opentype");
 }
 @keyframes slide {
     0% {background-position-x: 0%;}
     100% {background-position-x: 300cm;}
 }
-/* @keyframes popup-appear {
-    from {
-        filter: opacity(0);
-        transform: translateY(-75vh);
-    }
-    to {
-        filter: opacity(1);
-        transform: translateY(-50%);
-    }
-} */
 ::-webkit-scrollbar {
     width: 0.45cm;
 }
@@ -55,18 +50,23 @@ body::after {
     background-color: rgba(0,0,0,var(--alpha-amount,0%));
     transition: 800ms ease;
 }
-* {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-h1 {font-family: "Choco cooky";}
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+    font-family: 'Minecraft', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
 p {margin: 0;}
 a {text-decoration: none;}
 a:hover {text-decoration: underline;}
 h1 a.title-txt {
-    font-family: "Choco cooky";
+    font-family: 'Minecraft', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #FFFFFF;
     text-decoration: none;
 }
 h1.page-title {
-    font-family: "Choco cooky";
     font-size: 170%;
     text-align: center;
     color: #FFFFFF;
@@ -83,15 +83,26 @@ div.container {
     border-radius: 12px;
     backdrop-filter: blur(3px);
 }
-div.popup {
-    position: absolute;
-    top: 50%;
+div.container-fullpage {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div#popup-container {
     transform: translateY(-75vh);
     filter: opacity(0);
-    margin-left: 15vw;
-    margin-right: 15vw;
-    max-width: 70vw;
-    max-height: 80vh;
+    transition: 500ms ease;
+}
+div.popup {
+    position: absolute;
+    max-width: 60%;
+    max-height: 80%;
     overflow-x: overlay;
     z-index: 1;
     padding: 0.5cm;
@@ -106,6 +117,7 @@ span.close-popup {
     font-size: 30px;
     color: white;
     user-select: none;
+    cursor: pointer;
     transition: 300ms ease;
 }
 span.close-popup:hover {
@@ -149,6 +161,4 @@ div.rgb-txt {
     background-clip: text;
     animation: slide 5s linear 0s infinite normal;
 }
-span.timer, span.smhd {
-    font-family: "Choco cooky";
-}
+span.timer, span.smhd {font-family: "Choco cooky";}
