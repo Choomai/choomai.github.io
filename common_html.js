@@ -80,7 +80,7 @@ function addContact(type) {
             "https://discord.gg/J8tsBMUfUY"
         ];
         const imgMap = [
-            "https://choomai.ddns.net/dl/imgs/Facebook.svg",
+            "https://cdn.jsdelivr.net/gh/Choomai/choomai.github.io/dl/imgs/Facebook.svg",
             "https://cdn-icons-png.flaticon.com/128/733/733579.png",
             "https://github.githubassets.com/favicons/favicon-dark.svg",
             "https://cdn-icons-png.flaticon.com/512/5968/5968756.png"

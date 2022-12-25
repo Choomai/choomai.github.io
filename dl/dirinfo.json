@@ -457,14 +457,6 @@
                     "size": 357940
                 },
                 {
-                    "path": "imgs/11-10-2022.zip",
-                    "name": "11-10-2022.zip",
-                    "type": "file",
-                    "mtime": "2022-10-14T04:35:24.985Z",
-                    "extension": ".zip",
-                    "size": 45335742
-                },
-                {
                     "path": "imgs/12 gettyimages-918032668.jpg",
                     "name": "12 gettyimages-918032668.jpg",
                     "type": "file",
@@ -561,6 +553,14 @@
                     "size": 126346
                 },
                 {
+                    "path": "imgs/Facebook.svg",
+                    "name": "Facebook.svg",
+                    "type": "file",
+                    "mtime": "2022-11-25T04:29:00.438Z",
+                    "extension": ".svg",
+                    "size": 572
+                },
+                {
                     "path": "imgs/freenom.png",
                     "name": "freenom.png",
                     "type": "file",
@@ -634,8 +634,8 @@
                 }
             ],
             "type": "directory",
-            "mtime": "2022-11-11T17:54:20.085Z",
-            "size": 99322912
+            "mtime": "2022-12-25T07:07:20.353Z",
+            "size": 53987742
         },
         {
             "path": "universal",
@@ -801,6 +801,6 @@
         }
     ],
     "type": "directory",
-    "mtime": "2022-12-24T15:56:22.768Z",
-    "size": 313517583
+    "mtime": "2022-12-25T07:07:19.129Z",
+    "size": 268182413
 }
