@@ -52,7 +52,7 @@ h1.page-title {
     text-decoration: none;
 }
 div.container {
-    background-color: rgba(0, 0, 0, 40%);
+    background-color: rgba(0,0,0,0.4);
     max-width: 21cm;
     margin: auto;
     padding-top: 5px;
