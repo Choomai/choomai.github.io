@@ -1,7 +1,7 @@
 let httpCode = null;
 let info0 = null;
 let info1 = null;
-fetch("/error/errinfo.json")
+fetch("https://cdn.jsdelivr.net/gh/Choomai/choomai.github.io/error/errinfo.min.json")
 .then(response => {
     return response.json();
 })
