@@ -13,7 +13,8 @@ function addAddressBar(path_inp, user) {
     const addrBar = document.getElementById("addr-bar");
     const doubleLS = document.createTextNode(" » ");
     let pathLink = document.createElement("a");
-    pathLink.href = "/" + path_inp + "/";
+    if (isDL(0)) {pathLink.href = "/dl/" + path_inp + "/";} // For directory dl
+    else if (isDL(1)) {pathLink.href = "/" + path_inp + "/";} // For subdomain dl
     pathLink.innerHTML = user;
     addrBar.appendChild(doubleLS);
     if (path_inp != "") {addrBar.appendChild(pathLink);}

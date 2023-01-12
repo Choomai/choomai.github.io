@@ -1,15 +1,15 @@
 @font-face {
     font-family: "Choco cooky";
-    src: local("Choco cooky"),url("https://choomai.ddns.net/fonts/Chococooky.woff") format("woff");
+    src: local("Choco cooky"),url("/fonts/Chococooky.woff") format("woff");
 }
 @font-face {
     font-family: "White Rabbit";
-    src: local("White Rabbit"),url("https://choomai.ddns.net/fonts/WhiteRabbit.woff") format("woff");
+    src: local("White Rabbit"),url("/fonts/WhiteRabbit.woff") format("woff");
 }
 @font-face {
     font-family: "Minecraft";
     font-style: normal;
-    src: url("https://choomai.ddns.net/fonts/MinecraftRegular-Bmg3.otf") format("opentype");
+    src: url("/fonts/MinecraftRegular-Bmg3.otf") format("opentype");
 }
 @keyframes slide {
     0% {background-position-x: 0%;}

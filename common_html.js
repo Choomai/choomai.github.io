@@ -49,7 +49,7 @@ function createPopup(content) {
         appendPopup.style.transform = "translateY(0%)";
         appendPopup.style.filter = "opacity(1)";
     }, 50);
-}
+};
 function removePopup() {
     const appendPopup = document.getElementById("popup-container");
     docElem.style.setProperty("--blur-amount","0px");

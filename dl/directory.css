@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Noto%20Sans");
 body {
-    background: url("/dl/imgs/09\ gettyimages-582227825.jpg");
+    background: url("/dl/imgs/09%20gettyimages-582227825.jpg");
     background-color: black;
     background-size: cover;
     background-attachment: fixed;
@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
     padding-top: 15px;
 }
-* {font-family: 'Noto Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+* {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 h1.page-title {
     font-size: 0.6cm;
     text-align: center;
@@ -17,6 +17,7 @@ p.notice {
     text-align: center;
     font-size: 95%;
     color:aqua;
+    font-weight: bold;
 }
 a.homepage {
     position: absolute;
@@ -50,6 +51,7 @@ table {
     table-layout: fixed;
     line-height: 0.85cm;
 }
+table * {font-family: 'Noto Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 /* Header of table */
 .hname {
     max-width: 9.24cm; /* 55% of table */
