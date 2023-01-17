@@ -2,5 +2,5 @@ User-Agent: *
 Allow: /
 Disallow: /icons/
 
-Sitemap: https://choomai.ga/sitemap.xml/
+Sitemap: https://choomai.ga/sitemap.xml
 
