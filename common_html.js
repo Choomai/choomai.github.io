@@ -72,18 +72,16 @@ function addContact(type) {
     email.appendChild(emailURL);
     contact.appendChild(email); 
     */
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i <= 2; i++) {
         const urlMap = [
             "https://facebook.com/uranidiot0606",
             "https://twitter.com/choomai0",
-            "https://github.com/Choomai",
-            "https://discord.gg/J8tsBMUfUY"
+            "https://github.com/Choomai"
         ];
         const imgMap = [
-            "https://cdn.jsdelivr.net/gh/Choomai/choomai.github.io/dl/imgs/Facebook.svg",
+            "/dl/imgs/Facebook.svg",
             "https://cdn-icons-png.flaticon.com/128/733/733579.png",
-            "https://github.githubassets.com/favicons/favicon-dark.svg",
-            "https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
+            "https://github.githubassets.com/favicons/favicon-dark.svg"
         ];
         social = document.createElement("a")
         social.href = urlMap[i];

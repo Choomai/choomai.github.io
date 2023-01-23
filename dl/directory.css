@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Noto%20Sans");
+@keyframes fadeIn {
+    0% {display: none;}
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
 body {
     background: url("/dl/imgs/09%20gettyimages-582227825.jpg");
     background-color: black;
@@ -29,7 +36,7 @@ img.home {
     height: 0.75cm;
 }
 div.addr-bar {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     font-family: monospace;
     font-size: 14px;
@@ -40,6 +47,11 @@ div.addr-bar a {
     color: inherit;
     margin-left: 5px;
     margin-right: 5px;
+}
+span.report-if-bug {
+    opacity: 0;
+    color: aquamarine;
+    animation: fadeIn 1s 5s 1 ease forwards;
 }
 table {
     width: 80%; /* 80% of container */
@@ -144,7 +156,7 @@ a.psd, a.ai, a.svg, a.eps, a.dng, a.raw, a.gpr, a.srw, a.bmp, a.png, a.webp, a.g
     text-decoration-color: greenyellow;
     color: greenyellow;
 }
-a.wav, a.flac, a.ogg, a.mp3 {
+a.wav, a.flac, a.ogg, a.mp3, a.aac {
     /* Audio type color */
     text-decoration-color: deepskyblue;
     color: deepskyblue;
@@ -154,8 +166,12 @@ a.mp4, a.mkv, a.webm, a.mov, a.ts, a.flv {
     text-decoration-color: #1cf1bc;
     color: #1cf1bc;
 }
-a.url, a.txt, a.rtf, a.md, a.pdf, a.doc, a.docx, a.xls, a.xlsx, a.ppt, a.pptx, a.pptm {
+a.url, a.rtf, a.md, a.pdf, a.doc, a.docx, a.xls, a.xlsx, a.ppt, a.pptx, a.pptm {
     /* Document type color */
     text-decoration-color: #5599FF;
     color: #5599FF;
+}
+a.txt, a.xml, a.mbn {
+    text-decoration-color: #73ABFF;
+    color: #73ABFF
 }

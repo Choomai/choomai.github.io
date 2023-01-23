@@ -11,9 +11,9 @@
     font-style: normal;
     src: url("/fonts/MinecraftRegular-Bmg3.otf") format("opentype");
 }
-@keyframes slide {
-    0% {background-position-x: 0%;}
-    100% {background-position-x: 300cm;}
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 ::-webkit-scrollbar {
     width: 0.45cm;
@@ -49,10 +49,6 @@ body::after {
     background-color: rgba(0,0,0,var(--alpha-amount,0%));
     transition: 800ms ease;
 }
-* {
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 h1 {
     font-family: 'Minecraft', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
@@ -60,6 +56,8 @@ h1 {
 p {margin: 0;}
 a {text-decoration: none;}
 a:hover {text-decoration: underline;}
+footer {text-shadow: black 2px 1px 4px;}
+h1, h2, h3, h4, h5, h6, div, span, p, a {color: white;}
 h1 a.title-txt {
     font-family: 'Minecraft', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #FFFFFF;
@@ -137,6 +135,42 @@ hr.sep {
     margin-bottom: 5px;
 	height: 1px;
 }
+@keyframes slide {
+    0% {background-position-x: 0%;}
+    100% {background-position-x: 300cm;}
+}
+div.rgb-txt {
+    user-select: none;
+    color: white;
+    background: repeating-linear-gradient(-45deg,red 0%,yellow 7.14%,lime 14.28%,cyan 21.4%,blue 35.7%,magenta 42.84%,red 50%);
+    background-size: 300cm 300cm;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: slide 5s linear 0s infinite normal;
+}
+span.timer, span.smhd {font-family: "Choco cooky";}
+
+@keyframes circle-loading {
+    0% {rotate: 0deg;}
+    100% {rotate: 360deg;}
+}
+div.loading-circle::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    border: 3px solid darkslategray;
+    border-top: 3px solid greenyellow;
+    animation: circle-loading 1.5s infinite linear;
+}
+div.loading-circle span.please-wait {margin-top: 0.1cm;}
+
 .hidden {display: none;}
 .invert {filter: invert(1);}
 .center {text-align: center;}
@@ -150,14 +184,3 @@ img.profile {
     font-size: 75%;
     color: white;
 }
-div.rgb-txt {
-    user-select: none;
-    color: white;
-    background: repeating-linear-gradient(-45deg,red 0%,yellow 7.14%,lime 14.28%,cyan 21.4%,blue 35.7%,magenta 42.84%,red 50%);
-    background-size: 300cm 300cm;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: slide 5s linear 0s infinite normal;
-}
-span.timer, span.smhd {font-family: "Choco cooky";}
