@@ -1,15 +1,17 @@
+/* Version 1.0.7@github */
+
 @font-face {
     font-family: "Choco cooky";
-    src: local("Choco cooky"),url("/fonts/Chococooky.woff") format("woff");
+    src: local("Choco cooky"),url("https://cdn.choomai.xyz/fonts/Chococooky.woff") format("woff");
 }
 @font-face {
     font-family: "White Rabbit";
-    src: local("White Rabbit"),url("/fonts/WhiteRabbit.woff") format("woff");
+    src: local("White Rabbit"),url("https://cdn.choomai.xyz/fonts/WhiteRabbit.woff") format("woff");
 }
 @font-face {
     font-family: "Minecraft";
     font-style: normal;
-    src: url("/fonts/MinecraftRegular-Bmg3.otf") format("opentype");
+    src: url("https://cdn.choomai.xyz/fonts/MinecraftRegular-Bmg3.otf") format("opentype");
 }
 * {
     box-sizing: border-box;
@@ -30,7 +32,7 @@
     border-radius: 10px;
 }
 body {
-    background: url("/dl/imgs/10%20gettyimages-707445581.jpg");
+    background: url("https://cdn.choomai.xyz/imgs/04 gettyimages-627505342.jpg");
     background-color: black;
     background-size: cover;
     background-attachment: fixed;
@@ -58,6 +60,15 @@ a {text-decoration: none;}
 a:hover {text-decoration: underline;}
 footer {text-shadow: black 2px 1px 4px;}
 h1, h2, h3, h4, h5, h6, div, span, p, a {color: white;}
+code {
+    display: inline;
+    font-family: "White Rabbit";
+    font-weight: normal;
+    color: white;
+    background-color: dimgray;
+    padding: 3px;
+    border-radius: 3px;
+}
 h1 a.title-txt {
     font-family: 'Minecraft', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #FFFFFF;
@@ -103,6 +114,7 @@ div.popup {
     overflow-x: overlay;
     z-index: 1;
     padding: 0.5cm;
+    border-radius: 10px;
     background-color: #0F0F0F;
     color: #FFFFFF;
     transition: 500ms ease;
@@ -113,6 +125,7 @@ span.close-popup {
     right: 0.05cm;
     font-size: 30px;
     color: white;
+    overflow-x: hidden;
     user-select: none;
     cursor: pointer;
     transition: 300ms ease;
@@ -120,7 +133,7 @@ span.close-popup {
 span.close-popup:hover {
     transition: 300ms ease;
     color: red;
-    font-size: 35px;
+    transform: scale(1.2);
 }
 input.popup-button {
     display: block;
@@ -134,6 +147,8 @@ hr.sep {
 	margin-top: 5px;
     margin-bottom: 5px;
 	height: 1px;
+    width: -webkit-fill-available;
+    width: -moz-available;
 }
 @keyframes slide {
     0% {background-position-x: 0%;}
@@ -155,15 +170,16 @@ span.timer, span.smhd {font-family: "Choco cooky";}
     0% {rotate: 0deg;}
     100% {rotate: 360deg;}
 }
-div.loading-circle::before {
-    content: "";
+div.loading-circle {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+div.loading-circle::before {
+    /* content: ""; */
     width: 40px;
     height: 40px;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: 40px;
     border: 3px solid darkslategray;
     border-top: 3px solid greenyellow;
@@ -171,13 +187,64 @@ div.loading-circle::before {
 }
 div.loading-circle span.please-wait {margin-top: 0.1cm;}
 
+div.win-loader {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+}
+div.win-loader, div.win-loader-wrap div.win-loader-circle::before {
+    --time: 5s;
+    --size: 40px;
+}
+div.win-loader-wrap {
+    position: absolute;
+    width: calc(var(--size) - 2px);
+    height: calc(var(--size) - 2px);
+}
+div.win-loader-wrap div.win-loader-circle {
+    transform: rotate(225deg);
+    animation: orbit var(--time) infinite;
+    width: calc(var(--size) - 2px);
+    height: calc(var(--size) - 2px);
+    opacity: 0;
+}
+div.win-loader-wrap div.win-loader-circle::before {
+    content: "";
+    position: absolute;
+    width: calc(var(--size) / 8);
+    height: calc(var(--size) / 8);
+    border-radius: calc(var(--size) / 8);
+    background: greenyellow;
+}
+div.win-loader-wrap:nth-child(2) {transform: rotate(-14deg);}
+div.win-loader-wrap:nth-child(2) div.win-loader-circle {animation-delay: 133.33ms;}
+
+div.win-loader-wrap:nth-child(3) {transform: rotate(-28deg);}
+div.win-loader-wrap:nth-child(3) div.win-loader-circle {animation-delay: 266.67ms;}
+
+div.win-loader-wrap:nth-child(4) {transform: rotate(-42deg);}
+div.win-loader-wrap:nth-child(4) div.win-loader-circle {animation-delay: 400ms;}
+div.win-loader-wrap:nth-child(5) {transform: rotate(-56deg);}
+div.win-loader-wrap:nth-child(5) div.win-loader-circle {animation-delay: 533.33ms;}
+
+@keyframes orbit {
+    0% {transform: rotate(225deg);opacity:1;animation-timing-function: ease-out;}
+    7% {transform: rotate(345deg);animation-timing-function: linear;}
+    35% {transform: rotate(495deg);animation-timing-function: ease-in-out;}
+    42% {transform: rotate(690deg);animation-timing-function: linear;}
+    70% {transform: rotate(835deg);opacity:1;animation-timing-function: linear;}
+    76% {opacity:1;}
+    77% {transform: rotate(955deg);animation-timing-function: ease-in;}
+    78% {transform: rotate(955deg);opacity:0;}
+    100% {transform: rotate(955deg);opacity:0;}
+}
+
 .hidden {display: none;}
 .invert {filter: invert(1);}
 .center {text-align: center;}
 img.profile {
     margin: 0px 5px;
     width: 0.8cm;
-    height: 0.8cm;
 }
 .email {
     margin-top: 5px;

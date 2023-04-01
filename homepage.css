@@ -1,15 +1,95 @@
-.son {
-    position: absolute;
-    top: 109px;
-    left: 517px;
-    width: 300px;
+body {overflow-x: hidden;}
+nav.homepage {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+}
+nav.homepage *:not(img, h1, a) {height: 10vh;}
+nav.homepage div.logo {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid white;
+}
+img.nav-ico {
+    height: inherit;
+    padding-right: 5px;
+}
+h1.page-title {
+    padding-right: 10px;
+    margin: 0;
+    height: unset;
+}
+nav.homepage div.nav {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    font-family: 'Source Sans Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+nav.homepage div.nav > a {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    margin: 0 10px;
+    border-bottom: 3px solid transparent;
+    clip-path: polygon(0 0,
+        100% 0, 100% calc(100% - 3px),
+        50% calc(100% - 3px),
+        50% 100%,
+        50% 100%,
+        50% calc(100% - 3px),
+        0 calc(100% - 3px)
+    );
+    transition: 500ms clip-path ease, 10s border-bottom ease-in;
+}
+nav.homepage div.nav > a:hover {
+    text-decoration: none;
+    border-bottom: 3px solid lime;
+    clip-path: polygon(0 0,
+        100% 0,
+        100% calc(100% - 3px),
+        100% calc(100% - 3px),
+        100% 100%,
+        0 100%,
+        0 calc(100% - 3px),
+        0 calc(100% - 3px)
+    );
+    transition: 500ms clip-path ease;
+}
+span#contact {
+    display: flex;
+    align-items: center;
+    height: 80%;
+}
+span#contact a {transition: 400ms ease;}
+span#contact a:hover {
+    transition: 400ms ease;
+    transform: scale(1.5);
+}
+@media only screen and (pointer: coarse) {
+    nav.homepage {
+        height: 20vh;
+        flex-direction: column;
+    }
+    nav.homepage div.logo {
+        border-right: unset;
+        border-bottom: 1px solid white;
+    }
+}
+
+div.container-fullpage {
+    flex-direction: column;
 }
 div.timer {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
 }
-span.contributor {
+span.whatused {
     position: absolute;
     bottom: 0.2cm;
     right: 0.2cm;
@@ -17,7 +97,7 @@ span.contributor {
     padding: 5px;
     border-radius: 10px;
 }
-span.contributor a {
+span.whatused a {
     color: white;
 }
 div.audio {
