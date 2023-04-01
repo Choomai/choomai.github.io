@@ -1,3 +1,5 @@
+// Version 1.0.6@github
+
 // Prep.
 const docElem = document.documentElement;
 let domain = null;
@@ -27,7 +29,7 @@ const dummytxt = [ // Is there any JS function to create dummy text ?
     "Donec ultrices tincidunt arcu non sodales. Neque vitae tempus quam pellentesque nec nam aliquam. Diam maecenas sed enim ut sem viverra. Vel risus commodo viverra maecenas accumsan lacus vel facilisis. Eget nulla facilisi etiam dignissim. Habitant morbi tristique senectus et. Lacinia quis vel eros donec. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Dolor magna eget est lorem ipsum dolor. Quis lectus nulla at volutpat diam ut. Convallis posuere morbi leo urna molestie at elementum eu. Feugiat vivamus at augue eget arcu dictum."
 ];
 // End prep.
-function createPopup(content) {
+function createPopup(content, time) {
     let popup_container = document.createElement("div");
     let popup = document.createElement("div");
     let closeButton = document.createElement("span");
@@ -38,16 +40,17 @@ function createPopup(content) {
     closeButton.classList.add("close-popup");
     closeButton.innerHTML = "&times;";
     closeButton.setAttribute("onclick","removePopup()");
-    popup.textContent = content;
+    popup.innerHTML = content;
     popup.appendChild(closeButton);
     docElem.style.setProperty("--blur-amount","5px");
     docElem.style.setProperty("--alpha-amount","30%");
     popup_container.appendChild(popup);
     document.body.appendChild(popup_container);
     setTimeout(() => { // Do the transition
-        const appendPopup = document.getElementById("popup-container");
-        appendPopup.style.transform = "translateY(0%)";
-        appendPopup.style.filter = "opacity(1)";
+        const AppendedPopup = document.getElementById("popup-container");
+        AppendedPopup.style.transform = "translateY(0%)";
+        AppendedPopup.style.filter = "opacity(1)";
+        if (time) {setTimeout(() => {setTimeout(removePopup())}, time)}
     }, 50);
 };
 function removePopup() {
@@ -72,27 +75,33 @@ function addContact(type) {
     email.appendChild(emailURL);
     contact.appendChild(email); 
     */
+    const urlMap = [
+        "https://facebook.com/uranidiot0606",
+        "https://twitter.com/choomai0",
+        "https://github.com/Choomai"
+    ];
+    const imgMap = [
+        "https://cdn.choomai.xyz/icons/Facebook.svg",
+        "https://cdn.choomai.xyz/icons/Twitter.svg",
+        "https://github.githubassets.com/favicons/favicon-dark.svg"
+    ];
+    const altMap = [
+        "Facebook",
+        "Twitter",
+        "Github"
+    ];
     for (let i = 0; i <= 2; i++) {
-        const urlMap = [
-            "https://facebook.com/uranidiot0606",
-            "https://twitter.com/choomai0",
-            "https://github.com/Choomai"
-        ];
-        const imgMap = [
-            "/dl/imgs/Facebook.svg",
-            "https://cdn-icons-png.flaticon.com/128/733/733579.png",
-            "https://github.githubassets.com/favicons/favicon-dark.svg"
-        ];
         social = document.createElement("a")
         social.href = urlMap[i];
         socialImg = document.createElement("img")
         socialImg.setAttribute("class","profile")
         socialImg.src = imgMap[i];
+        socialImg.alt = altMap[i];
         social.appendChild(socialImg);
         contact.appendChild(social);
     }
 };
-function addTitle(type) {
+function addTitle(type, withPath = true, forceReplace) {
     const pagett = document.getElementById("page-title");
     switch (type) {
         case 0:
@@ -110,10 +119,11 @@ function addTitle(type) {
                 domain = "dl." + location.hostname;
                 path = path.substring(3,path.length);
             };
-            if ((!document.title) && (isDL(0) || isDL(1))) {
+            if (!document.title && (isDL(0) || isDL(1))) {
                 document.title = currentDir + " - Server Repository";
-            } else if ((!document.title)) {document.title = currentDir};
+            } else if (!document.title) {document.title = currentDir};
             try {
+                if (forceReplace) {pagett.innerHTML = "";};
                 if (!pagett.textContent) {pagett.innerHTML = domain + " - " + currentDir};
             } catch (err) {console.warn("Can't find any page-tt HTML tags.")}
             break;
@@ -135,9 +145,10 @@ function addTitle(type) {
             if ((!document.title) && (isDL(0) || isDL(1))) {
                 document.title = currentDir + " - Server Repository";
             } else if (!document.title) {document.title = currentDir};
-            try { 
+            try {
+                if (forceReplace) {pagett.innerHTML = "";};
                 if (!pagett.textContent) {
-                    pagett.innerHTML = " - " + path;
+                    if (withPath) {pagett.innerHTML = " - " + path;};
                     pagett.prepend(domain);
                 };
             } catch (err) {console.warn("Can't find any page-tt HTML tags.")}
