@@ -8,7 +8,7 @@ let totalClick = 0;
 let hasClicked = false;
 let vid = null;
 function vidbase() {
-    document.getElementById("txt").innerHTML = "<b style:\"color:yellow\">WARN: Scripts may close only the windows that were opened by them.<b>.<br><video id=\"vid\" class=\"fullscreen\" loop></video>";
+    document.getElementById("txt").innerHTML = "<b style='color:yellow'>WARN: Scripts may close only the windows that were opened by them.</b><br><video id='vid' class='fullscreen' loop></video>";
     vid = document.getElementById("vid");
 };
 function vid_reqfs(vid_inp) {
@@ -37,56 +37,55 @@ function redirect() {
         document.getElementById("txt").innerHTML = "Wait...";
         fetch("https://api.random.org/json-rpc/4/invoke", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                "jsonrpc": "2.0",
-                "method": "generateIntegers",
-                "id": 0,
-                "params": {
-                    "apiKey": "913f26a3-6209-4ca4-b45a-aeac662594ce",
-                    "n": 1,
-                    "min": 1,
-                    "max": 5
-                }
+                "jsonrpc":"2.0",
+                "method":"generateIntegers",
+                "id":0,
+                // "params":{"apiKey":"913f26a3-6209-4ca4-b45a-aeac662594ce","n":1,"min":1,"max":5}
             })
         })
         .then(response => {return response.json();})
         .then(response => {
-            random = (response.result);
-            ranInt = response.result.random.data[0];
-            console.log("Request left: "+random.requestsLeft);
-            console.log("Bits left: "+random.bitsLeft);
-            vidbase();
-            switch(ranInt) {
-                case 1: vid_reqfs("chuitheconcac.mp4");
-                break;
-                case 2: vid_reqfs("frifai.mp4");
-                break;
-                case 3: vid_reqfs("fnaf%20jumpscare.mp4");
-                break;
-                case 4: vid_reqfs("rickroll.mp4");
-                break;
-                case 5: vid_reqfs("jumpscare.mp4");
-                break;
-                case NaN: alert("Can't generate random integer from \"RANDOM.ORG\".")
-                break;
+            if (!response.error) {
+                random = (response.result);
+                ranInt = response.result.random.data[0];
+                console.log("Request left: "+random.requestsLeft);
+                console.log("Bits left: "+random.bitsLeft);
+                vidbase();
+                switch(ranInt) {
+                    case 1: vid_reqfs("chuitheconcac.mp4");
+                    break;
+                    case 2: vid_reqfs("frifai.mp4");
+                    break;
+                    case 3: vid_reqfs("fnaf%20jumpscare.mp4");
+                    break;
+                    case 4: vid_reqfs("rickroll.mp4");
+                    break;
+                    case 5: vid_reqfs("jumpscare.mp4");
+                    break;
+                }
+                document.addEventListener('fullscreenchange', closetab, false);
+            } else {
+                document.getElementById("txt").innerHTML = "<b style='color:red'>"
+                    + "Failed to get random number from&nbsp;"
+                    + "<a style='color:white' href='https://random.org target='_blank' rel='noopener noreferrer'>RANDOM.ORG</a>.<br>"
+                    + `Error Code: ${response.error.code}<br>`
+                    + `Error Message: ${response.error.message}`
+                    + "</b><br>"
             }
-            if (document.addEventListener) {document.addEventListener('fullscreenchange', closetab, false);}
-        });
+        })
     }
 };
 function redirectV2() {
-    totalClick = 14;
     // Is this an easter egg ? 😂
     totalClick++;
-    if (totalClick <= 3) {alert("This function has been disabled by the owner of this webiste.")}
-    else if (totalClick > 3 && totalClick <= 5) {alert("Thi? f?nct?on has been d?sabled by the own?r o? this webi?te.")}
-    else if (totalClick > 5 && totalClick <= 10) {alert("T?i? f?nct\\on ha? be?? d$s\\bl/d ?y t?? own?r o? t?!? w?bi?te.")}
-    else if (totalClick > 10 && totalClick <= 12) {alert("T¾i¾ f@n¾t$o& ha½ ?e?? d$?a?¾?? ?y t$? o!n¼r o? t\\½? w?b?½te.")}
-    else if (totalClick == 12) {alert("Press OK to ignore the waring.");redirect()}
-    else if (totalClick > 13) {redirect()};
+    if (totalClick <= 1) {alert("This function has been disabled by the owner of this webiste.")}
+    else if (totalClick > 1 && totalClick <= 3) {alert("Thi? f?nct?on has been d?sabled by the own?r o? this webi?te.")}
+    else if (totalClick > 3 && totalClick <= 4) {alert("T?i? f?nct\\on ha? be?? d$s\\bl/d ?y t?? own?r o? t?!? w?bi?te.")}
+    else if (totalClick > 4 && totalClick <= 6) {alert("T¾i¾ f@n¾t$o& ha½ ?e?? d$?a?¾?? ?y t$? o!n¼r o? t\\½? w?b?½te.")}
+    else if (totalClick == 7) {alert("Press OK to ignore the waring.");redirect()}
+    else if (totalClick > 7) {redirect()};
 };
 // For countdown
 // let endDate = new Date("Aug 13, 2023 00:00:00").getTime();
