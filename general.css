@@ -2,16 +2,16 @@
 
 @font-face {
     font-family: "Choco cooky";
-    src: local("Choco cooky"),url("https://cdn.choomai.xyz/fonts/Chococooky.woff") format("woff");
+    src: local("Choco cooky"),url("https://cdn.choomai.lol/fonts/Chococooky.woff") format("woff");
 }
 @font-face {
     font-family: "White Rabbit";
-    src: local("White Rabbit"),url("https://cdn.choomai.xyz/fonts/WhiteRabbit.woff") format("woff");
+    src: local("White Rabbit"),url("https://cdn.choomai.lol/fonts/WhiteRabbit.woff") format("woff");
 }
 @font-face {
     font-family: "Minecraft";
     font-style: normal;
-    src: url("https://cdn.choomai.xyz/fonts/MinecraftRegular-Bmg3.otf") format("opentype");
+    src: url("https://cdn.choomai.lol/fonts/MinecraftRegular-Bmg3.otf") format("opentype");
 }
 * {
     box-sizing: border-box;
@@ -32,7 +32,7 @@
     border-radius: 10px;
 }
 body {
-    background: url("https://cdn.choomai.xyz/imgs/04 gettyimages-627505342.jpg");
+    background: url("https://cdn.choomai.lol/imgs/04 gettyimages-627505342.jpg");
     background-color: black;
     background-size: cover;
     background-attachment: fixed;

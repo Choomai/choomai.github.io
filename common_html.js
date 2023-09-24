@@ -81,8 +81,8 @@ function addContact(type) {
         "https://github.com/Choomai"
     ];
     const imgMap = [
-        "https://cdn.choomai.xyz/icons/Facebook.svg",
-        "https://cdn.choomai.xyz/icons/Twitter.svg",
+        "https://cdn.choomai.lol/icons/Facebook.svg",
+        "https://cdn.choomai.lol/icons/Twitter.svg",
         "https://github.githubassets.com/favicons/favicon-dark.svg"
     ];
     const altMap = [
