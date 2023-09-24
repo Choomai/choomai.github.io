@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <!-- For SEO / Start -->
-        <meta name="description" content="A website that is hosted by me, Nguyễn Cao Nguyên, This website isn't always online.">
+        <meta name="description" content="This website isn't always online.">
         <meta name="keywords" content="choomai">
-        <meta name="author" content="Nguyen Cao Nguyen">
-        <meta property="og:url" content="https://choomai.ga">
+        <meta name="author" content="Choomai">
+        <meta property="og:url" content="https://choomai.github.io">
         <meta property="og:title" content="about:blank">
         <meta property="og:description" content="Nothing to see here, go away.">
         <meta property="og:image" content="https://cdn.choomai.lol/icons/network_256.png">
@@ -17,13 +17,13 @@
         <meta charset="UTF-8">
         <meta name="color-scheme" content="dark">
         <meta name="viewport" content="width=device-width, initial-scale=0.8">
-        <link rel="icon" href="https://cdn.choomai.lol/icons/network.ico"/>
         <link rel="preconnect" href="https://cdn.choomai.lol">
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"/>
-        <link rel="stylesheet" href="/general.css"/>
-        <link rel="stylesheet" href="/homepage.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+        <link rel="icon" href="https://cdn.choomai.lol/icons/network.ico"/>
+        <link rel="stylesheet" href="/general.css">
+        <link rel="stylesheet" href="/homepage.css">
         <script src="/common_html.js" defer></script>
         <script src="/homepage.js" defer></script>
         <title>about:blank</title>
@@ -35,37 +35,39 @@
                 <h1 id="page-title" class="page-title"></h1>
             </div>
             <div class="nav">
-                <a id="nav-software" href="#">
+                <a id="nav-software" href="/dl/">
                     <img class="nav-ico" src="https://cdn.choomai.lol/icons/installer_256.png" alt="installer">
                     Software
+                </a>
+                <a id="nav-rcon-mc" href="https://rcon.choomai.xyz/">
+                    <img class="nav-ico" src="https://cdn.choomai.lol/icons/windows_terminal_417.png" alt="terminal">
+                    Minecraft RCON
                 </a>
                 <a id="nav-event" href="/event/">
                     <img class="nav-ico" src="https://cdn.choomai.lol/icons/event.png" alt="event">
                     Event
                 </a>
+                <a id="nav-userdebug" href="/userdebug/">
+                    <img class="nav-ico" src="https://cdn.choomai.lol/icons/warning.png" alt="warning">
+                    userdebug
+                </a>
             </div>
             <span id="contact">
-                <a href="mailto:report@choomai.tk"><img class="profile" src="https://cdn.choomai.lol/icons/email.png" alt="email"></a>
+                <a href="mailto:report@choomai.lol"><img class="profile" src="https://cdn.choomai.lol/icons/email.png" alt="email"></a>
             </span>
         </nav>
         <div class="container">
             <main class="center">
-                Go to <b><a style="color:#FF160C" href="/userdebug/">/userdebug</a></b> ⚠️Experimental!<br><br>
-                Countdown to 13/8/2023. Time left:
+                Countdown to 13/8/2024. Time left:
                 <div id="timer" class="rgb-txt timer">
-                    <span id="timer-days" class="timer">0<span class="smhd">d</span></span>
-                    <span id="timer-hours" class="timer">0<span class="smhd">h</span></span>
-                    <span id="timer-mins" class="timer">0<span class="smhd">m</span></span>
-                    <span id="timer-secs" class="timer">0<span class="smhd">s</span></span>
+                    <span id="timer-days" class="timer">0d</span>
+                    <span id="timer-hours" class="timer">0h</span>
+                    <span id="timer-mins" class="timer">0m</span>
+                    <span id="timer-secs" class="timer">0s</span>
                 </div>
-                <input class="popup-button" type="button" value="Create a popup" onclick="createPopup(dummytxt[0])">
+                <input class="popup-button" type="button" value="Create a popup" onclick="createPopup('Pornhub is the best website!')">
             </main>
-            <hr class="sep">
-            <footer id="not-contact" class="center">
-                UI forked from <a style="color:#4287F5" href="https://malwarewatch.org" target="_blank">malwarewatch.org</a><br>
-            </footer>
         </div>
-        <audio class="audio-player" controls autoplay loop src="/dl/universal/minecraft.mp3"></audio>
         <span class="whatused"><a href="/whatused/">What I use ?</a></span>
     </body>
 </html>

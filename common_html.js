@@ -1,4 +1,4 @@
-// Version 1.0.6@github
+// Version 1.1.7@main
 
 // Prep.
 const docElem = document.documentElement;
@@ -22,45 +22,21 @@ function isDL(inp) {
         if (tmp_host.substring(0,2) == "dl") {return true} else {return false};
     }
 }
-const dummytxt = [ // Is there any JS function to create dummy text ?
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet cursus sit amet dictum sit amet justo donec. Ac tortor vitae purus faucibus ornare suspendisse sed nisi. Egestas erat imperdiet sed euismod nisi porta. Eget nullam non nisi est sit. Faucibus et molestie ac feugiat sed. Sit amet volutpat consequat mauris nunc congue nisi vitae suscipit. Donec ultrices tincidunt arcu non sodales neque sodales ut. Nunc aliquet bibendum enim facilisis gravida. Velit dignissim sodales ut eu. Faucibus turpis in eu mi. Mauris rhoncus aenean vel elit scelerisque mauris. Massa massa ultricies mi quis hendrerit dolor magna eget.",
-    "Arcu dui vivamus arcu felis bibendum ut tristique. Mauris nunc congue nisi vitae suscipit. Orci ac auctor augue mauris. Ac odio tempor orci dapibus ultrices in. Sit amet nisl purus in mollis nunc sed. In vitae turpis massa sed elementum tempus egestas sed sed. Placerat vestibulum lectus mauris ultrices. Ultrices in iaculis nunc sed augue. Risus feugiat in ante metus dictum at tempor commodo ullamcorper. In nibh mauris cursus mattis molestie a iaculis at. In cursus turpis massa tincidunt.",
-    "Felis donec et odio pellentesque diam volutpat commodo. Dignissim convallis aenean et tortor at risus. Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget. Tincidunt tortor aliquam nulla facilisi cras fermentum. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Sit amet est placerat in egestas erat imperdiet sed euismod. Elit duis tristique sollicitudin nibh. Elit eget gravida cum sociis natoque penatibus et magnis. Tortor dignissim convallis aenean et tortor at risus viverra. Ullamcorper sit amet risus nullam eget. Sapien pellentesque habitant morbi tristique senectus et netus et malesuada. Aliquet enim tortor at auctor. Massa tempor nec feugiat nisl pretium.",
-    "Donec ultrices tincidunt arcu non sodales. Neque vitae tempus quam pellentesque nec nam aliquam. Diam maecenas sed enim ut sem viverra. Vel risus commodo viverra maecenas accumsan lacus vel facilisis. Eget nulla facilisi etiam dignissim. Habitant morbi tristique senectus et. Lacinia quis vel eros donec. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Dolor magna eget est lorem ipsum dolor. Quis lectus nulla at volutpat diam ut. Convallis posuere morbi leo urna molestie at elementum eu. Feugiat vivamus at augue eget arcu dictum."
-];
 // End prep.
 function createPopup(content, time) {
-    let popup_container = document.createElement("div");
-    let popup = document.createElement("div");
+    let popup_html = document.createElement("dialog");
     let closeButton = document.createElement("span");
-    popup_container.id = "popup-container"
-    popup_container.classList.add("container-fullpage");
-    popup.id = "popup"; 
-    popup.classList.add("popup");
+    popup_html.id = "popup";
+    popup_html.classList.add("popup");
     closeButton.classList.add("close-popup");
     closeButton.innerHTML = "&times;";
-    closeButton.setAttribute("onclick","removePopup()");
-    popup.innerHTML = content;
-    popup.appendChild(closeButton);
-    docElem.style.setProperty("--blur-amount","5px");
-    docElem.style.setProperty("--alpha-amount","30%");
-    popup_container.appendChild(popup);
-    document.body.appendChild(popup_container);
-    setTimeout(() => { // Do the transition
-        const AppendedPopup = document.getElementById("popup-container");
-        AppendedPopup.style.transform = "translateY(0%)";
-        AppendedPopup.style.filter = "opacity(1)";
-        if (time) {setTimeout(() => {setTimeout(removePopup())}, time)}
-    }, 50);
+    closeButton.setAttribute("onclick",'popup.close();setTimeout(() => popup.remove(), 500)');
+    popup_html.innerHTML = content;
+    popup_html.appendChild(closeButton);
+    document.body.appendChild(popup_html);
+    popup.showModal();
+    if (time) {setTimeout(() => {setTimeout(popup.close())}, time)}
 };
-function removePopup() {
-    const appendPopup = document.getElementById("popup-container");
-    docElem.style.setProperty("--blur-amount","0px");
-    docElem.style.setProperty("--alpha-amount","0%");
-    appendPopup.style.transform = "translateY(-75vh)";
-    appendPopup.style.filter = "opacity(0)";
-    setTimeout(() => {appendPopup.remove()},500);
-}
 function addContact(type) {
     const contact = document.getElementById("contact");
     /* 
